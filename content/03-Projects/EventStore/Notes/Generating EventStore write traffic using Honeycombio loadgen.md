@@ -1,5 +1,5 @@
 ---
-{"aliases":null,"tags":["Database/Clickhouse","Benchmark","O11y/DistributedTracing","O11y/AutoIntrumentation","O11y/Attributes"],"projects":["EventStore"],"type":null,"Description":"Generating Write path traffic with honeycombio for DT auto instrumentation load","Areas":null,"publish":true,"date created":"Friday, December 6th 2024, 10:28:39 am","date modified":"Wednesday, December 18th 2024, 10:25:11 pm","PassFrontmatter":true,"created":"2024-12-06T10:28:39.070+05:30","updated":"2024-12-26T09:09:20.834+05:30"}
+{"aliases":null,"tags":["Database/Clickhouse","Benchmark","O11y/DistributedTracing","O11y/AutoIntrumentation","O11y/Attributes"],"projects":["EventStore"],"type":null,"Description":"Generating Write path traffic with honeycombio for DT auto instrumentation load","Areas":null,"publish":true,"date created":"Friday, December 6th 2024, 10:28:39 am","date modified":"Wednesday, December 18th 2024, 10:25:11 pm","PassFrontmatter":true,"created":"2024-12-06T10:28:39.070+05:30","updated":"2024-12-26T09:56:45.323+05:30"}
 ---
 
 
@@ -111,7 +111,7 @@
 ```
 # Data shape
 
-### ARB data
+### ARB[^1] data
 
 | Distributed Tracing                      |                                                                  |
 | ---------------------------------------- | ---------------------------------------------------------------- |
@@ -236,3 +236,5 @@ bay - T:10e9f9 S:d701 P     start:12:58:52.740 end:12:58:53.051 map[ABInfo:olnbo
 | Event       | event.name                   | "user-login", "error"                                    | High                             | string             | Name of the event.                       |
 | Event       | event.domain                 | "authentication", "http"                                 | Medium                           | string             | Domain of the event.                     |
 | Event       | event.time                   | "2024-12-24T12:00:00Z"                                   | High                             | string             | Timestamp of the event.                  |
+
+[^1]: Architecture Review Board
