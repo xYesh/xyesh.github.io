@@ -1,5 +1,5 @@
 ---
-{"tags":["Database/Clickhouse","Benchmark"],"projects":["EventStore"],"url":"https://clickhouse.com/docs/en/operations/utilities/clickhouse-benchmark","type":"Article","Description":"clickhouse read path benchmarking tool","Areas":null,"publish":true,"PassFrontmatter":true,"created":"2024-12-04T09:21:25.439+05:30","updated":"2024-12-26T09:11:27.260+05:30"}
+{"tags":["Database/Clickhouse","Benchmark"],"projects":["EventStore"],"url":"https://clickhouse.com/docs/en/operations/utilities/clickhouse-benchmark","type":"Article","Description":"clickhouse read path benchmarking tool","Areas":null,"publish":true,"PassFrontmatter":true,"created":"2024-12-04T09:21:25.440+05:30","updated":"2024-12-26T09:11:27.261+05:30"}
 ---
 
 # Cli command
