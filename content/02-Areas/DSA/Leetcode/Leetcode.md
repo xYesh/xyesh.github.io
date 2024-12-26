@@ -1,5 +1,5 @@
 ---
-{"publish":true,"PassFrontmatter":true,"created":"2024-12-03T20:08:04.895+05:30","updated":"2024-12-26T09:54:21.017+05:30"}
+{"publish":true,"PassFrontmatter":true,"created":"2024-12-03T20:08:04.895+05:30","updated":"2024-12-26T16:10:11.322+05:30"}
 ---
 
 # Setup details
@@ -21,7 +21,7 @@ nohup docker run -p 3000:3000 alfaarghya/alfa-leetcode-api:2.0.1 &
 name New Leetcode
 type command
 action QuickAdd: Create Leetcode page
-color purple
+
 ```
 
 # Currently solving
