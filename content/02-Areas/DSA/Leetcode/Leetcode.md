@@ -1,28 +1,19 @@
 ---
-{"publish":true,"PassFrontmatter":true,"created":"2024-12-03T20:08:04.895+05:30","updated":"2024-12-26T16:10:11.322+05:30"}
+{"publish":true,"PassFrontmatter":true,"created":"2024-12-03T20:08:04.895+05:30","updated":"2024-12-29T20:09:50.882+05:30"}
 ---
 
-# Setup details
-### References 
--  [GitHub - zimmshane/leetcode-puller-obsidian: A script for populating Leetcode question data into Obsidian using the QuickAdd.](https://github.com/zimmshane/leetcode-puller-obsidian)
-- [GitHub - alfaarghya/alfa-leetcode-api: It's a custom leetcode api. This API provides endpoints to retrieve details about a user's profile, badges, solved questions, contest details, contest history, submissions, calendar and and also daily questions, selected problem, list of problems.](https://github.com/alfaarghya/alfa-leetcode-api)
-### Commands to startup leetcode api locally
-
-```shell
-wsl #to enter wsl mode
-nohup docker run -p 3000:3000 alfaarghya/alfa-leetcode-api:2.0.1 &
-```
-
-
+[[04-Resources/UnProcessed/Setup leetcode API locally\|Setup leetcode API locally]]
 # Details 
 [[TickTick/😈Personal Projects\|😈Personal Projects]]  || Leetcode source - [Grind 75 - A better Blind 75 you can customize, by the author of Blind 75](https://www.techinterviewhandbook.org/grind75/?hours=5&weeks=26)
 
 ```button
-name New Leetcode
+name New Problem
 type command
 action QuickAdd: Create Leetcode page
 
 ```
+# Stats
+<p><span><h4 data-heading="Number of Leetcode problems done so far: 14" dir="auto">Number of Leetcode problems done so far: 14</h4></span></p><p><span><h6 data-heading="Easy: 5 Medium: 10 Hard: 0" dir="auto">Easy: 5 Medium: 10 Hard: 0</h6></span></p><p><span><h4 data-heading="Number of problems to redo : 6" dir="auto">Number of problems to redo : 6</h4></span></p><p><span><h4 data-heading="Number of problems done perfectly : 4" dir="auto">Number of problems done perfectly : 4</h4></span></p>
 
 # Currently solving
 | File                                                                           | Description | difficulty | tags                                                                                                                                                                      | link                                          | Date                        |
@@ -38,6 +29,7 @@ action QuickAdd: Create Leetcode page
 | [[02-Areas/DSA/Leetcode/Medium/57. Insert Interval\|57. Insert Interval]]   | \-                           | Medium     | <ul><li>leetcode/array</li><li>programming/practice</li><li>leetcode/interval</li></ul>                                                                                                                   | https://leetcode.com/problems/insert-interval  | 8:03 PM - December 05, 2024  |
 | [[02-Areas/DSA/Leetcode/Medium/542. 01 Matrix\|542. 01 Matrix]]             | \-                           | Medium     | <ul><li>leetcode/array</li><li>leetcode/dynamic-programming</li><li>leetcode/breadth-first-search</li><li>leetcode/matrix</li><li>programming/practice</li></ul>                                          | https://leetcode.com/problems/01-matrix        | 7:48 AM - December 12, 2024  |
 | [[02-Areas/DSA/Leetcode/Medium/15. 3Sum\|15. 3Sum]]                         | \-                           | Medium     | <ul><li>leetcode/array</li><li>leetcode/two-pointers</li><li>leetcode/sorting</li><li>programming/practice</li></ul>                                                                                      | https://leetcode.com/problems/3sum             | 11:37 PM - December 18, 2024 |
+| [[02-Areas/DSA/Leetcode/Medium/133. Clone Graph\|133. Clone Graph]]         | \-                           | Medium     | <ul><li>leetcode/hash-table</li><li>leetcode/depth-first-search</li><li>leetcode/breadth-first-search</li><li>leetcode/graph</li><li>programming/practice</li></ul>                                       | https://leetcode.com/problems/clone-graph      | 8:49 PM - December 20, 2024  |
 
 
 # Recently Solved
