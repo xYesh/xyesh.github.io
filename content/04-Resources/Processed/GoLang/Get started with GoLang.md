@@ -1,5 +1,5 @@
 ---
-{"aliases":null,"tags":["go","ProgrammingLanguages/go","CrashCourse"],"projects":["loadgen"],"url":["https://www.youtube.com/watch?v=yyUHQIec83I","https://www.youtube.com/watch?v=XCZWyN9ZbEQ"],"type":"Video","Description":"A Crash course on how to start understanding GoLang","Areas":"HowTos","publish":true,"date created":"Thursday, December 26th 2024, 1:20:36 pm","date modified":"Thursday, December 26th 2024, 1:20:54 pm","PassFrontmatter":true,"created":"2024-12-26T13:20:36.584+05:30","updated":"2024-12-26T19:44:22.814+05:30"}
+{"aliases":null,"tags":["go","ProgrammingLanguages/go","CrashCourse"],"projects":["loadgen"],"url":["https://www.youtube.com/watch?v=yyUHQIec83I","https://www.youtube.com/watch?v=XCZWyN9ZbEQ"],"type":"Video","Description":"A Crash course on how to start understanding GoLang","Areas":"HowTos","publish":true,"date created":"Thursday, December 26th 2024, 1:20:36 pm","date modified":"Thursday, December 26th 2024, 1:20:54 pm","PassFrontmatter":true,"created":"2024-12-26T13:20:36.585+05:30","updated":"2024-12-26T19:44:22.814+05:30"}
 ---
 
 **Table of contents**

@@ -1,5 +1,5 @@
 ---
-{"aliases":null,"tags":["Database/Clickhouse","Benchmark","O11y/DistributedTracing","O11y/AutoIntrumentation","O11y/Attributes"],"projects":["EventStore","loadgen"],"type":"Note","Description":"Generating Write path traffic with honeycombio for DT auto instrumentation load","Areas":null,"publish":true,"date created":"Friday, December 6th 2024, 10:28:39 am","date modified":"Wednesday, December 18th 2024, 10:25:11 pm","PassFrontmatter":true,"created":"2024-12-06T10:28:39.070+05:30","updated":"2024-12-27T18:21:58.454+05:30"}
+{"aliases":null,"tags":["Database/Clickhouse","Benchmark","O11y/DistributedTracing","O11y/AutoIntrumentation","O11y/Attributes"],"projects":["EventStore","loadgen"],"type":"Note","Description":"Generating Write path traffic with honeycombio for DT auto instrumentation load","Areas":null,"publish":true,"date created":"Friday, December 6th 2024, 10:28:39 am","date modified":"Wednesday, December 18th 2024, 10:25:11 pm","PassFrontmatter":true,"created":"2024-12-06T10:28:39.071+05:30","updated":"2024-12-31T17:23:22.564+05:30"}
 ---
 
 
@@ -107,7 +107,9 @@
 
 ./loadgen --tracecount=100 --depth=10 --nspans=20 --sender=print --dataset=prodRepl fk.page.type=/sq100000
 
-./loadgen --tracecount=10 --depth=1 --nspans=1 --sender=print --dataset=prodRepl fk.page.type=/sq5
+./loadgen --tracecount=1 --depth=1 --nspans=1 --sender=print --dataset=prodRepl fk.page.type=/sq5
+
+./loadgen --tracecount=1 --depth=1 --nspans=1 --sender=print --dataset=prodRepl fk.page.type=/sxc5,15
 ```
 # Data shape
 
@@ -191,50 +193,90 @@ bay - T:10e9f9 S:d701 P     start:12:58:52.740 end:12:58:53.051 map[ABInfo:olnbo
 
 
 # DT Auto instrumented attributes
+## Auto-Instrumentation Attributes in OpenTelemetry
 
-# Auto-Instrumentation Attributes in OpenTelemetry
+|             |                              |                   |                                                          |                                  |                    |                                          |
+| ----------- | ---------------------------- | ----------------- | -------------------------------------------------------- | -------------------------------- | ------------------ | ---------------------------------------- |
+| Type        | Attribute Name               | loadgen<br>config | Example                                                  | Expected Cardinality             | Expected Data Type | Description                              |
+| General     | otel.library.name            | io.opentelemetry  | "io.opentelemetry"                                       | Low                              | string             | Name of the instrumentation library.     |
+| General     | otel.library.version         | /sq10             | "1.8.0"                                                  | Low                              | string             | Version of the instrumentation library.  |
+| General     | otel.scope.name              | /sw500            | "http.server"                                            | Medium                           | string             | Name of the scope creating telemetry.    |
+| General     | otel.scope.version           | /sq10             | "1.2.0"                                                  | Low                              | string             | Version of the scope creating telemetry. |
+| HTTP        | http.method                  | /sq8              | "GET", "POST"                                            | Low (fixed set of methods)       | string             | The HTTP method used.                    |
+| HTTP        | http.url                     | /u10,1000         | "[https://example.com/users](https://example.com/users)" | High (varies per request)        | string             | The full URL of the request.             |
+| HTTP        | http.target                  | /uq10,1000        | "/users?id=123"                                          | High (varies per request)        | string             | The path and query string of the URL.    |
+| HTTP        | http.host                    | /u                | "[example.com](http://example.com):443"                  | Medium (depends on host setup)   | string             | The hostname and port of the URL.        |
+| HTTP        | http.scheme                  | /sq10             | "https"                                                  | Low (fixed set of schemes)       | string             | The protocol scheme.                     |
+| HTTP        | http.status_code             | /st1,0.1          | 200, 404                                                 | Low (fixed set of status codes)  | integer            | The HTTP response status code.           |
+| HTTP        | http.request_content_length  | /ir0,1000         | 512                                                      | High                             | integer            | Size of the request payload in bytes.    |
+| HTTP        | http.response_content_length | /ir0,10000        | 2048                                                     | High                             | integer            | Size of the response payload in bytes.   |
+| HTTP        | net.peer.ip                  | /ip2,2,10,256     | "192.168.1.1"                                            | High (varies per client/server)  | string             | IP address of the client/server.         |
+| HTTP        | net.peer.port                | /i                | 443                                                      | Low (fixed set of ports)         | integer            | Port number of the client/server.        |
+| DB          | db.system                    | /sw10             | "mysql", "postgresql"                                    | Low (fixed set of systems)       | string             | The database management system.          |
+| DB          | db.user                      | /sw10000          | "admin"                                                  | Medium (limited number of users) | string             | The database user.                       |
+| DB          | db.name                      | /sw10000          | "user_database"                                          | Medium (depends on setup)        | string             | The name of the database.                |
+| DB          | db.statement                 | /uq10,10000       | "SELECT * FROM users WHERE id = ?"                       | High                             | string             | The database query being executed.       |
+| DB          | db.operation                 | /sw10             | "SELECT", "INSERT"                                       | Low (fixed set of operations)    | string             | The high-level operation being executed. |
+| DB          | net.peer.name                | /u                | "[db.example.com](http://db.example.com)"                | Medium                           | string             | Hostname of the database server.         |
+| Messaging   | messaging.system             | /sw10             | "kafka", "rabbitmq"                                      | Low (fixed set of systems)       | string             | The type of messaging system.            |
+| Messaging   | messaging.destination        | /sw1000           | "user-updates"                                           | Medium                           | string             | The name of the message queue or topic.  |
+| Messaging   | messaging.destination_kind   | /sw10             | "queue", "topic"                                         | Low (fixed set of types)         | string             | The type of destination.                 |
+| Messaging   | messaging.message_id         | /sxc10,1000       | "abc123"                                                 | High                             | string             | A unique identifier for the message.     |
+| Messaging   | messaging.operation          | /sw10             | "send", "receive", "process"                             | Low (fixed set of operations)    | string             | The operation being performed.           |
+| CDN         | cache.hit                    | /b                | true, false                                              | Low                              | boolean            | Indicates if a cache hit occurred.       |
+| CDN         | cache.key                    | /sxc10,1000       | "user:1234"                                              | High                             | string             | The key used in the cache operation.     |
+| CDN         | cache.expiration             | /ir600            | "600" (seconds)                                          | Medium                           | integer            | Expiration time of the cache entry.      |
+| Process     | process.runtime.name         | /sw10             | "java", "nodejs"                                         | Low                              | string             | Name of the runtime used.                |
+| Process     | process.runtime.version      | /sw50             | "11.0.8", "14.17.0"                                      | Low                              | string             | Version of the runtime.                  |
+| Process     | process.pid                  | /i50000           | 12345                                                    | High                             | integer            | Process ID of the application.           |
+| File System | file.path                    | /uq10,10000       | "/var/log/app.log"                                       | High                             | string             | Path of the file being accessed.         |
+| File System | file.operation               | /sw10             | "read", "write"                                          | Low                              | string             | Type of file operation.                  |
+| File System | file.size                    | /ig2048,50        | 1024                                                     | High                             | integer            | Size of the file in bytes.               |
+| Event       | event.name                   | /sw10000          | "user-login", "error"                                    | High                             | string             | Name of the event.                       |
+| Event       | event.domain                 | /sw1000           | "authentication", "http"                                 | Medium                           | string             | Domain of the event.                     |
 
-|             |                              |                                                          |                                  |                    |                                          |
-| ----------- | ---------------------------- | -------------------------------------------------------- | -------------------------------- | ------------------ | ---------------------------------------- |
-| Type        | Attribute Name               | Example                                                  | Expected Cardinality             | Expected Data Type | Description                              |
-| General     | otel.library.name            | "io.opentelemetry"                                       | Low                              | string             | Name of the instrumentation library.     |
-| General     | otel.library.version         | "1.8.0"                                                  | Low                              | string             | Version of the instrumentation library.  |
-| General     | otel.scope.name              | "http.server"                                            | Medium                           | string             | Name of the scope creating telemetry.    |
-| General     | otel.scope.version           | "1.2.0"                                                  | Low                              | string             | Version of the scope creating telemetry. |
-| HTTP        | http.method                  | "GET", "POST"                                            | Low (fixed set of methods)       | string             | The HTTP method used.                    |
-| HTTP        | http.url                     | "[https://example.com/users](https://example.com/users)" | High (varies per request)        | string             | The full URL of the request.             |
-| HTTP        | http.target                  | "/users?id=123"                                          | High (varies per request)        | string             | The path and query string of the URL.    |
-| HTTP        | http.host                    | "[example.com](http://example.com):443"                  | Medium (depends on host setup)   | string             | The hostname and port of the URL.        |
-| HTTP        | http.scheme                  | "https"                                                  | Low (fixed set of schemes)       | string             | The protocol scheme.                     |
-| HTTP        | http.status_code             | 200, 404                                                 | Low (fixed set of status codes)  | integer            | The HTTP response status code.           |
-| HTTP        | http.request_content_length  | 512                                                      | High                             | integer            | Size of the request payload in bytes.    |
-| HTTP        | http.response_content_length | 2048                                                     | High                             | integer            | Size of the response payload in bytes.   |
-| HTTP        | net.peer.ip                  | "192.168.1.1"                                            | High (varies per client/server)  | string             | IP address of the client/server.         |
-| HTTP        | net.peer.port                | 443                                                      | Low (fixed set of ports)         | integer            | Port number of the client/server.        |
-| DB          | db.system                    | "mysql", "postgresql"                                    | Low (fixed set of systems)       | string             | The database management system.          |
-| DB          | db.user                      | "admin"                                                  | Medium (limited number of users) | string             | The database user.                       |
-| DB          | db.name                      | "user_database"                                          | Medium (depends on setup)        | string             | The name of the database.                |
-| DB          | db.statement                 | "SELECT * FROM users WHERE id = ?"                       | High                             | string             | The database query being executed.       |
-| DB          | db.operation                 | "SELECT", "INSERT"                                       | Low (fixed set of operations)    | string             | The high-level operation being executed. |
-| DB          | net.peer.name                | "[db.example.com](http://db.example.com)"                | Medium                           | string             | Hostname of the database server.         |
-| DB          | net.peer.ip                  | "192.168.1.2"                                            | Medium                           | string             | IP address of the database server.       |
-| DB          | net.peer.port                | 5432                                                     | Low (fixed set of ports)         | integer            | Port number of the database server.      |
-| Messaging   | messaging.system             | "kafka", "rabbitmq"                                      | Low (fixed set of systems)       | string             | The type of messaging system.            |
-| Messaging   | messaging.destination        | "user-updates"                                           | Medium                           | string             | The name of the message queue or topic.  |
-| Messaging   | messaging.destination_kind   | "queue", "topic"                                         | Low (fixed set of types)         | string             | The type of destination.                 |
-| Messaging   | messaging.message_id         | "abc123"                                                 | High                             | string             | A unique identifier for the message.     |
-| Messaging   | messaging.operation          | "send", "receive", "process"                             | Low (fixed set of operations)    | string             | The operation being performed.           |
-| CDN         | cache.hit                    | true, false                                              | Low                              | boolean            | Indicates if a cache hit occurred.       |
-| CDN         | cache.key                    | "user:1234"                                              | High                             | string             | The key used in the cache operation.     |
-| CDN         | cache.expiration             | "600" (seconds)                                          | Medium                           | integer            | Expiration time of the cache entry.      |
-| Process     | process.runtime.name         | "java", "nodejs"                                         | Low                              | string             | Name of the runtime used.                |
-| Process     | process.runtime.version      | "11.0.8", "14.17.0"                                      | Low                              | string             | Version of the runtime.                  |
-| Process     | process.pid                  | 12345                                                    | High                             | integer            | Process ID of the application.           |
-| File System | file.path                    | "/var/log/app.log"                                       | High                             | string             | Path of the file being accessed.         |
-| File System | file.operation               | "read", "write"                                          | Low                              | string             | Type of file operation.                  |
-| File System | file.size                    | 1024                                                     | High                             | integer            | Size of the file in bytes.               |
-| Event       | event.name                   | "user-login", "error"                                    | High                             | string             | Name of the event.                       |
-| Event       | event.domain                 | "authentication", "http"                                 | Medium                           | string             | Domain of the event.                     |
-| Event       | event.time                   | "2024-12-24T12:00:00Z"                                   | High                             | string             | Timestamp of the event.                  |
+# Loadgen format
+otel.library.name            : io.opentelemetry
+otel.library.version         : /sq10
+otel.scope.name              : /sw500
+otel.scope.version           : /sq10
+http.method                  : /sq8
+http.url                     : /u10,1000
+http.target                  : /uq10,1000
+http.host                    : /u
+http.scheme                  : /sq10
+http.status_code             : /st1,0.1
+http.request_content_length  : /ir0,1000
+http.response_content_length : /ir0,10000
+net.peer.ip                  : /ip2,2,10,256
+net.peer.port                : /i
+db.system                    : /sw10
+db.user                      : /sw10000
+db.name                      : /sw10000
+db.statement                 : /uq10,10000
+db.operation                 : /sw10
+net.peer.name                : /u
+messaging.system             : /sw10
+messaging.destination        : /sw1000
+messaging.destination_kind   : /sw10
+messaging.message_id         : /sxc10,1000
+messaging.operation          : /sw10
+cache.hit                    : /b
+cache.key                    : /sxc10,1000
+cache.expiration             : /ir600
+process.runtime.name         : /sw10
+process.runtime.version      : /sw50
+process.pid                  : /i50000
+file.path                    : /uq10,10000
+file.operation               : /sw10
+file.size                    : /ig2048,50
+event.name                   : /sw10000
+event.domain                 : /sw1000
+
+
+
+
+
+
 
 [^1]: Architecture Review Board
