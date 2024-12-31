@@ -1,19 +1,19 @@
 ---
-{"aliases":null,"tags":["Database/Clickhouse","Benchmark","O11y/DistributedTracing","O11y/AutoIntrumentation","O11y/Attributes"],"projects":["EventStore","loadgen"],"type":"Note","Description":"Generating Write path traffic with honeycombio for DT auto instrumentation load","Areas":null,"publish":true,"date created":"Friday, December 6th 2024, 10:28:39 am","date modified":"Wednesday, December 18th 2024, 10:25:11 pm","PassFrontmatter":true,"created":"2024-12-06T10:28:39.071+05:30","updated":"2024-12-31T17:23:22.564+05:30"}
+{"aliases":null,"tags":["Database/Clickhouse","Benchmark","O11y/DistributedTracing","O11y/AutoIntrumentation","O11y/Attributes"],"projects":["EventStore","loadgen"],"type":"Note","Description":"Generating Write path traffic with honeycombio for DT auto instrumentation load","Areas":null,"publish":true,"date created":"Friday, December 6th 2024, 10:28:39 am","date modified":"Tuesday, December 31st 2024, 5:56:21 pm","PassFrontmatter":true,"created":"2024-12-06T10:28:39.071+05:30","updated":"2024-12-31T18:09:00.729+05:30"}
 ---
 
 
 
-# Honeycomb Traces Generator evaluation
+# Honeycomb Traces Generator Evaluation
 
-- [[03-Projects/EventStore/Notes/Generating EventStore write traffic using Honeycombio loadgen#Commands\|Commands]]
-	- [[03-Projects/EventStore/Notes/Generating EventStore write traffic using Honeycombio loadgen#Commands\|Basic Script That Generates 100 Traces per Second for 10 Seconds]]
-		- [[03-Projects/EventStore/Notes/Generating EventStore write traffic using Honeycombio loadgen#Basic Script That Generates 100 Traces per Second for 10 Seconds\|Data in ClickHouse]]
-	- [[03-Projects/EventStore/Notes/Generating EventStore write traffic using Honeycombio loadgen#Commands\|Script with Custom spanAttributes Added to it]]
-		- [[03-Projects/EventStore/Notes/Generating EventStore write traffic using Honeycombio loadgen#Script with Custom spanAttributes Added to it\|Data in Clickhouse]]
-- [[03-Projects/EventStore/Notes/Generating EventStore write traffic using Honeycombio loadgen#Generator Details\|Generator Details]]
-	- [[03-Projects/EventStore/Notes/Generating EventStore write traffic using Honeycombio loadgen#Generator Details\|Test Script with print the traces to local]]
-
+**Table of contents**
+- [Commands](#Commands)
+	- [Basic Script That Generates 100 Traces per Second for 10 Seconds](#Basic%20Script%20That%20Generates%20100%20Traces%20per%20Second%20for%2010%20Seconds)
+		- [Data in ClickHouse](#Data%20in%20ClickHouse)
+	- [Script with Custom spanAttributes Added to it](#Script%20with%20Custom%20spanAttributes%20Added%20to%20it)
+		- [Data in Clickhouse](#Data%20in%20Clickhouse)
+- [Generator Details](#Generator%20Details)
+	- [Test Script with Print the Traces to Local](#Test%20Script%20with%20Print%20the%20Traces%20to%20Local)
 
 
 [[03-Projects/EventStore/Notes/attachments/Diagram - loadgen-setup\|Diagram - loadgen-setup]]
@@ -101,7 +101,7 @@
 | uq    | url with random query                                    | cardinality of 1st part (3) | cardinality of 2nd part (10) |
 | st    | status code                                              | percentage of 400s          | percentage of 500s           |
 
-#### Test Script with print the traces to local
+#### Test Script with Print the Traces to Local
 ```shell
 ./loadgen --tracecount=3 --depth=10 --nspans=10 --extra=8 --sender=print --dataset=generatorTest product=/sa discount=/b20 price=/fg100,50
 
@@ -111,9 +111,9 @@
 
 ./loadgen --tracecount=1 --depth=1 --nspans=1 --sender=print --dataset=prodRepl fk.page.type=/sxc5,15
 ```
-# Data shape
+# Data Shape
 
-### ARB[^1] data
+### ARB[^1] Data
 
 | Distributed Tracing                      |                                                                  |
 | ---------------------------------------- | ---------------------------------------------------------------- |
@@ -132,8 +132,8 @@
 | Max Cardinality of a span                | lower double digits                                              |
 | Cardinality of span attributes           |                                                                  |
 
-## Span / Custom attributes
-#### References - 
+## Span / Custom Attributes
+#### References -
 - Asterix - [Jiro Bundles](http://jiro.fkcloud.in/admin/config/asterix/zone/in-hyderabad-1/bundles/20)
 - RUM - [New Relic](https://one.newrelic.com/data-exploration/data-explorer/explorer?account=3700279&duration=1800000&state=06b1df31-cc06-595e-7ca2-dacb64cfb07d)
 - DT - [UAR Traces](https://confluence.fkinternal.com/display/MTL/Attribute+Details+of+UAR+Traces)
@@ -146,13 +146,13 @@
 | UAR/DT  | net.peer.name      | ip             | 10.24.15.135                                                                                                |             | TODO: can't generate IPs                                 |
 | UAR/DT  | http.status_code   | int            | 200                                                                                                         |             | 200                                                      |
 | UAR/DT  | http.method        | String         | "POST"                                                                                                      | Low         | important-office                                         |
-| UAR/DT  | flow               | url            | "/4/page/fetch/productPage"                                                                                 | Low         | https://example.com/pipe/bad-garden                      |
-| UAR/DT  | fk.url             | url            | "/4/page/fetch"                                                                                             | Low         | https://example.com/leaf/right-dress                     |
-| UAR/DT  | fk.page.uri        | url            | "/%20/p/%20?pid=TSHGFF84YKTPQN5E"                                                                           | High        | https://example.com/apple/good-curtain?extra=yzquuuvort  |
+| UAR/DT  | flow               | url            | "/4/page/fetch/productPage"                                                                                 | Low         | <https://example.com/pipe/bad-garden>                      |
+| UAR/DT  | fk.url             | url            | "/4/page/fetch"                                                                                             | Low         | <https://example.com/leaf/right-dress>                     |
+| UAR/DT  | fk.page.uri        | url            | "/%20/p/%20?pid=TSHGFF84YKTPQN5E"                                                                           | High        | <https://example.com/apple/good-curtain?extra=yzquuuvort>  |
 | UAR/DT  | fk.page.type       | String         | productPage                                                                                                 | Low         | sure-pocket                                              |
 | UAR/DT  | apiMethod          | String         | "com.flipkart.astra.server.resource.CustomAstraResource.fetchWidget"                                        | Low         | best-mouth                                               |
 | RUM     | sessionCrashed     | Boolean        | true                                                                                                        |             | false                                                    |
-| RUM     | requestDomain      | url            | www.Flipkart.com                                                                                            | Low         | https://example.com/spring/har                           |
+| RUM     | requestDomain      | url            | <www.Flipkart.com>                                                                                            | Low         | <https://example.com/spring/har>                           |
 | RUM     | deviceUUID         | UUID           |                                                                                                             | High        | mdwgnagpfmoamsqg                                         |
 | RUM     | deviceType         | String         | Mobile / Tablet / random string                                                                             | Low         | white-cloud                                              |
 | RUM     | deviceModel        | String         |                                                                                                             | Low         | good-parcel                                              |
@@ -169,18 +169,18 @@
 | RUM     | ABInfo             | UUID           |                                                                                                             | High        | olnboqdxjwqqiagz                                         |
 | Asterix | x-user-agent       | String         |                                                                                                             | Low         | military-cow                                             |
 | Asterix | offerStatus        | String         |                                                                                                             | Low         | social-tongue                                            |
-| Asterix | fk-client-ip       | ip             |                                                                                                             |             | <br>https://example.com/berry/clear?extra=nzuaavygnj<br> |
+| Asterix | fk-client-ip       | ip             |                                                                                                             |             | <br><https://example.com/berry/clear?extra=nzuaavygnj><br> |
 | Asterix | OrderId            | UUID           |                                                                                                             | High        | sxtxmskimjoxwlcf                                         |
 | Asterix | EventId            | UUID           |                                                                                                             | High        | axbozvceuoelubnu                                         |
 | Asterix | CustomerId         | UUID           |                                                                                                             | High        | sparjemvtpuvullb                                         |
 | Asterix | CheckoutId         | UUID           |                                                                                                             | High        | thffmmjrqigzylvh                                         |
 
-#### Loadgen script with above parameters
+#### Loadgen Script with Above Parameters
 ```shell
 ./loadgen --tracecount=1 --depth=10 --nspans=20 --sender=print --dataset=prodRepl net.peer.name=0.0.0.0 http.status_code=/st10,0.1 status.code=/i-1,1 net.peer.port=-1 fk.page.uri=/uq10,100000 fk.url=/u10,1000 flow=/u10,1000 originZone=/sw8 fk.page.type=/sq1000 apiMethod=/sw5000  http.method=/sq10 EngagementTime=/i0,1000 Uptime=/ir0,1000 FULLY_PAINTED_TIME=/ig0,1000 appName=/sw20 SessionInfo=/sa16 sessionCrashed=/b1 deviceUUID=/s16 SessionID=/s16 ABInfo=/s16 AppVersion=/sq50 requestDomain=/u10,1 JS_Crash_Message=/sw50 MobileOSVersion=/sw10 deviceManufacturer=/sw10 deviceModel=/sw100 deviceType=/sw50 fk-client-ip=/uq50,10 CheckoutId=/s16 OrderId=/s16 EventId=/s16 CustomerId=/s16 offerStatus=/sw100 x-user-agent=/sw100
 ```
 
-##### Example data
+##### Example Data
 ```
 bay - T:10e9f9 S:d701 P     start:12:58:52.740 end:12:58:53.051 map[ABInfo:olnboqdxjwqqiagz AppVersion:local-thread CheckoutId:thffmmjrqigzylvh CustomerId:sparjemvtpuvullb EngagementTime:510 EventId:axbozvceuoelubnu FULLY_PAINTED_TIME:-866 JS_Crash_Message:clear-whistle MobileOSVersion:national-net OrderId:sxtxmskimjoxwlcf SessionID:xzdjzwfexerpxzwp SessionInfo:lwrkasqreuvgtqus Uptime:2 apiMethod:best-mouth appName:long-stem count:1 deviceManufacturer:international-bath deviceModel:good-parcel deviceType:white-cloud deviceUUID:mdwgnagpfmoamsqg fk-client-ip:https://example.com/berry/clear?extra=nzuaavygnj fk.page.type:sure-pocket fk.page.uri:https://example.com/apple/good-curtain?extra=yzquuuvort fk.url:https://example.com/leaf/right-dress flow:https://example.com/pipe/bad-garden http.method:important-office http.status_code:200 net.peer.name:0.0.0.0 net.peer.port:-1 offerStatus:social-tongue originZone:federal-wall process_id:36584 requestDomain:https://example.com/spring/hard sessionCrashed:false status.code:0 x-user-agent:military-cow]
 ```
@@ -192,12 +192,11 @@ bay - T:10e9f9 S:d701 P     start:12:58:52.740 end:12:58:53.051 map[ABInfo:olnbo
 	- Combination of static content + Generator.
 
 
-# DT Auto instrumented attributes
+# DT Auto Instrumented Attributes
 ## Auto-Instrumentation Attributes in OpenTelemetry
 
-|             |                              |                   |                                                          |                                  |                    |                                          |
-| ----------- | ---------------------------- | ----------------- | -------------------------------------------------------- | -------------------------------- | ------------------ | ---------------------------------------- |
 | Type        | Attribute Name               | loadgen<br>config | Example                                                  | Expected Cardinality             | Expected Data Type | Description                              |
+| ----------- | ---------------------------- | ----------------- | -------------------------------------------------------- | -------------------------------- | ------------------ | ---------------------------------------- |
 | General     | otel.library.name            | io.opentelemetry  | "io.opentelemetry"                                       | Low                              | string             | Name of the instrumentation library.     |
 | General     | otel.library.version         | /sq10             | "1.8.0"                                                  | Low                              | string             | Version of the instrumentation library.  |
 | General     | otel.scope.name              | /sw500            | "http.server"                                            | Medium                           | string             | Name of the scope creating telemetry.    |
@@ -235,48 +234,74 @@ bay - T:10e9f9 S:d701 P     start:12:58:52.740 end:12:58:53.051 map[ABInfo:olnbo
 | Event       | event.name                   | /sw10000          | "user-login", "error"                                    | High                             | string             | Name of the event.                       |
 | Event       | event.domain                 | /sw1000           | "authentication", "http"                                 | Medium                           | string             | Domain of the event.                     |
 
-# Loadgen format
-otel.library.name            : io.opentelemetry
-otel.library.version         : /sq10
-otel.scope.name              : /sw500
-otel.scope.version           : /sq10
-http.method                  : /sq8
-http.url                     : /u10,1000
-http.target                  : /uq10,1000
-http.host                    : /u
-http.scheme                  : /sq10
-http.status_code             : /st1,0.1
-http.request_content_length  : /ir0,1000
-http.response_content_length : /ir0,10000
-net.peer.ip                  : /ip2,2,10,256
-net.peer.port                : /i
-db.system                    : /sw10
-db.user                      : /sw10000
-db.name                      : /sw10000
-db.statement                 : /uq10,10000
-db.operation                 : /sw10
-net.peer.name                : /u
-messaging.system             : /sw10
-messaging.destination        : /sw1000
-messaging.destination_kind   : /sw10
-messaging.message_id         : /sxc10,1000
-messaging.operation          : /sw10
-cache.hit                    : /b
-cache.key                    : /sxc10,1000
-cache.expiration             : /ir600
-process.runtime.name         : /sw10
-process.runtime.version      : /sw50
-process.pid                  : /i50000
-file.path                    : /uq10,10000
-file.operation               : /sw10
-file.size                    : /ig2048,50
-event.name                   : /sw10000
-event.domain                 : /sw1000
+# Loadgen Format
+## Example Loadgen Config
+```yaml
+telemetry:
+    host: http://otel-collector-pulsar-ch.observability:4318/v1/traces
+    insecure: true
+    dataset: generatorTest
 
+format:
+    depth: 20
+    nspans: 150
+    extra: 50
+    tracetime: 1s
 
+quantity:
+    tps: 100000
+    runtime: 24h
+    ramptime: 5s
 
+output:
+    sender: print
+    protocol: grpc
 
+global:
+    loglevel: warn
 
+fields:
+    otel.library.name: io.opentelemetry
+    otel.library.version: /sq10
+    otel.scope.name: /sw500
+    otel.scope.version: /sq10
+    http.method: /sq8
+    http.url: /u10,1000
+    http.target: /uq10,1000
+    http.host: /u
+    http.scheme: /sq10
+    http.status_code: /st1,0.1
+    http.request_content_length: /ir0,1000
+    http.response_content_length: /ir0,10000
+    net.peer.ip: /ip2,2,10,256
+    net.peer.port: /i
+    db.system: /sw10
+    db.user: /sw10000
+    db.name: /sw10000
+    db.statement: /uq10,10000
+    db.operation: /sw10
+    net.peer.name: /u
+    messaging.system: /sw10
+    messaging.destination: /sw1000
+    messaging.destination_kind: /sw10
+    messaging.message_id: /sxc10,1000
+    messaging.operation: /sw10
+    cache.hit: /b
+    cache.key: /sxc10,1000
+    cache.expiration: /ir600
+    process.runtime.name: /sw10
+    process.runtime.version: /sw50
+    process.pid: /i50000
+    file.path: /uq10,10000
+    file.operation: /sw10
+    file.size: /ig2048,50
+    event.name: /sw10000
+    event.domain: /sw1000
+```
 
+## Example data
+```
+allspice - T:1f2d74 S:0281 P20e2 start:18:03:41.667 end:18:03:41.682 map[able-ticket:-96 best-cushion:d6df6de121c9a6f0 cache.expiration:496 cache.hit:false cache.key:f952eeda3e certain-sun:jj clear-store:-3 db.name:great-knot db.operation:only-town db.statement:https://example.com/ring/social-leaf?extra=xfwlydopdi db.system:late-chain db.user:easy-branch early-horn:hiir-a6262c20-fjgs early-spade:47 easy-comb:79 event.domain:clear-cheese event.name:only-ship federal-jewel:true federal-plane:jdlqbprigz file.operation:best-fish file.path:https://example.com/plate/national-ant?extra=xpwaaoztfg file.size:2085 free-ticket:80 full-nail:true full-pig:22 good-berry:56 good-knee:-68 good-line:0.7338457151522857 great-wire:uljneknhuh hard-berry:53 hard-orange:37 hard-throat:832.3887070377575 high-floor:2e757d7da40ecf59 high-net:0.8473846411319103 http.host:https://example.com/drop/large http.method:political-skirt http.request_content_length:119 http.response_content_length:1664 http.scheme:sure-finger http.status_code:200 http.target:https://example.com/eye/hard-plough?extra=kirbmrgdtj http.url:https://example.com/muscle/high-flag human-skirt:495.5855841694738 human-stick:730.5876208275826 important-boot:31 important-screw:0.28879545537594087 international-cat:40 local-collar:sdnt-f68086f4-ppye local-island:0.46699546883306065 local-rail:12121.810129287027 low-box:kp low-fowl:840.9503995599574 messaging.destination:federal-spoon messaging.destination_kind:clear-nail messaging.message_id:b91cf0687d messaging.operation:possible-star messaging.system:recent-cake military-army:false military-bed:-5 military-net:894.4957908877157 national-scissors:0.6722464985634898 net.peer.ip:0.1.9.90 net.peer.name:https://example.com/moon/special net.peer.port:88 new-wire:true otel.library.name:io.opentelemetry otel.library.version:important-hammer otel.scope.name:full-umbrella otel.scope.version:different-office other-hand:53 other-leaf:df6ff751aa87afc6 political-basket:64 political-potato:38 process.pid:48665 process.runtime.name:real-dress process.runtime.version:federal-wire process_id:52106 public-town:11218.97922437933 real-cheese:925.2928275230162 real-fish:8 real-island:24.0815123544348 small-pin:true social-spoon:true strong-plate:zidsx sure-floor:793.01014109755 white-eye:384.8473997771901 whole-spade:axwpqkomdb]
+```
 
 [^1]: Architecture Review Board
