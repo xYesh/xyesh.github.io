@@ -1,5 +1,5 @@
 ---
-{"aliases":null,"tags":["Database/Clickhouse","otel","docker"],"projects":["EventStore"],"url":null,"type":"Guide","Description":"Otel agent with clickhouse","Areas":"HowTos","date created":"Friday, December 6th 2024, 4:48:40 pm","date modified":"Friday, December 6th 2024, 4:52:20 pm","publish":true,"PassFrontmatter":true,"created":"2024-12-06T16:48:40.609+05:30","updated":"2024-12-26T09:11:27.278+05:30"}
+{"aliases":null,"tags":["Database/Clickhouse","otel","docker"],"projects":["EventStore"],"url":null,"type":"Guide","Description":"Otel agent with clickhouse","Areas":"HowTos","date created":"Friday, December 6th 2024, 4:48:40 pm","date modified":"Friday, December 6th 2024, 4:52:20 pm","publish":true,"PassFrontmatter":true,"created":"2024-12-06T16:48:40.608+05:30","updated":"2024-12-26T09:11:27.278+05:30"}
 ---
 
 # Docker Compose File

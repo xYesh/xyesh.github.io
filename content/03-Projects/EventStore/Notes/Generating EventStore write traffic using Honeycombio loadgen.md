@@ -1,23 +1,32 @@
 ---
-{"aliases":null,"tags":["Database/Clickhouse","Benchmark","O11y/DistributedTracing","O11y/AutoIntrumentation","O11y/Attributes"],"projects":["EventStore","loadgen"],"type":"Note","Description":"Generating Write path traffic with honeycombio for DT auto instrumentation load","Areas":null,"publish":true,"date created":"Friday, December 6th 2024, 10:28:39 am","date modified":"Tuesday, December 31st 2024, 5:56:21 pm","PassFrontmatter":true,"created":"2024-12-06T10:28:39.071+05:30","updated":"2024-12-31T18:09:00.729+05:30"}
+{"aliases":null,"tags":["Database/Clickhouse","Benchmark","O11y/DistributedTracing","O11y/AutoIntrumentation","O11y/Attributes"],"projects":["EventStore","loadgen"],"type":"Note","Description":"Generating Write path traffic with honeycombio for DT auto instrumentation load","Areas":null,"publish":true,"date created":"Friday, December 6th 2024, 10:28:39 am","date modified":"Tuesday, December 31st 2024, 5:56:21 pm","PassFrontmatter":true,"created":"2024-12-06T10:28:39.070+05:30","updated":"2024-12-31T18:51:17.995+05:30"}
 ---
 
 
+**Table of contents**
+- [Honeycomb Traces Generator Evaluation](#Honeycomb%20Traces%20Generator%20Evaluation)
+		- [Commands](#Commands)
+			- [Basic Script That Generates 100 Traces per Second for 10 Seconds](#Basic%20Script%20That%20Generates%20100%20Traces%20per%20Second%20for%2010%20Seconds)
+				- [Data in ClickHouse](#Data%20in%20ClickHouse)
+			- [Script with Custom spanAttributes Added to it](#Script%20with%20Custom%20spanAttributes%20Added%20to%20it)
+				- [Data in Clickhouse](#Data%20in%20Clickhouse)
+		- [Generator Details](#Generator%20Details)
+			- [Test Script with Print the Traces to Local](#Test%20Script%20with%20Print%20the%20Traces%20to%20Local)
+- [Data Shape](#Data%20Shape)
+		- [ARB[^1] Data](#ARB%5B%5E1%5D%20Data)
+	- [Span / Custom Attributes](#Span%20/%20Custom%20Attributes)
+			- [References -](#References%20-)
+			- [Loadgen Script with Above Parameters](#Loadgen%20Script%20with%20Above%20Parameters)
+				- [Example Data](#Example%20Data)
+- [Limitations of Honeycombio/Loadgen](#Limitations%20of%20Honeycombio/Loadgen)
+- [DT Auto Instrumented Attributes](#DT%20Auto%20Instrumented%20Attributes)
+	- [Auto-Instrumentation Attributes in OpenTelemetry](#Auto-Instrumentation%20Attributes%20in%20OpenTelemetry)
+- [Loadgen Format](#Loadgen%20Format)
+	- [Example Loadgen Config](#Example%20Loadgen%20Config)
+	- [Example data](#Example%20data)
 
 # Honeycomb Traces Generator Evaluation
-
-**Table of contents**
-- [Commands](#Commands)
-	- [Basic Script That Generates 100 Traces per Second for 10 Seconds](#Basic%20Script%20That%20Generates%20100%20Traces%20per%20Second%20for%2010%20Seconds)
-		- [Data in ClickHouse](#Data%20in%20ClickHouse)
-	- [Script with Custom spanAttributes Added to it](#Script%20with%20Custom%20spanAttributes%20Added%20to%20it)
-		- [Data in Clickhouse](#Data%20in%20Clickhouse)
-- [Generator Details](#Generator%20Details)
-	- [Test Script with Print the Traces to Local](#Test%20Script%20with%20Print%20the%20Traces%20to%20Local)
-
-
 [[03-Projects/EventStore/Notes/attachments/Diagram - loadgen-setup\|Diagram - loadgen-setup]]
-
 ### Commands
 #### Basic Script That Generates 100 Traces per Second for 10 Seconds
 ```Shell
@@ -234,7 +243,7 @@ bay - T:10e9f9 S:d701 P     start:12:58:52.740 end:12:58:53.051 map[ABInfo:olnbo
 | Event       | event.name                   | /sw10000          | "user-login", "error"                                    | High                             | string             | Name of the event.                       |
 | Event       | event.domain                 | /sw1000           | "authentication", "http"                                 | Medium                           | string             | Domain of the event.                     |
 
-# Loadgen Format
+# Loadgen Final Format for DT
 ## Example Loadgen Config
 ```yaml
 telemetry:
