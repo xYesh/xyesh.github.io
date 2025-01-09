@@ -1,5 +1,5 @@
 ---
-{"dg-home":true,"publish":true,"PassFrontmatter":true,"created":"2024-12-18T20:40:04.792+05:30","updated":"2025-01-09T20:59:31.242+05:30"}
+{"dg-home":true,"publish":true,"PassFrontmatter":true,"created":"2024-12-18T20:40:04.792+05:30","updated":"2025-01-09T21:01:55.717+05:30"}
 ---
 
 
@@ -15,7 +15,7 @@ All my notes are captured on [Obsidian](https://obsidian.md/) and published to G
 
 <div><table class="dataview table-view-table"><thead class="table-view-thead"><tr class="table-view-tr-header"><th class="table-view-th"><span>Projects</span><span class="dataview small-text">2</span></th></tr></thead><tbody class="table-view-tbody"><tr><td><span><a data-tooltip-position="top" aria-label="EventStore" data-href="EventStore" href="EventStore" class="internal-link" target="_blank" rel="noopener nofollow">EventStore</a></span></td></tr><tr><td><span><a data-tooltip-position="top" aria-label="TracesGeneratorEnhancements" data-href="TracesGeneratorEnhancements" href="TracesGeneratorEnhancements" class="internal-link" target="_blank" rel="noopener nofollow">TracesGeneratorEnhancements</a></span></td></tr></tbody></table></div>
 
-# Recently captured resources
+# Recently captured [resources](04-Resources)
 | File                                                                                                     | url                                                                                                               | Description                                         | type  | tags                                                                          | Date                        |
 | -------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | --------------------------------------------------- | ----- | ----------------------------------------------------------------------------- | --------------------------- |
 | [[04-Resources/UnProcessed/Clickhouse Compression observations\|Clickhouse Compression observations]] | \-                                                                                                                | \-                                                  | Note  | <ul><li>Database/Clickhouse</li><li>Database/Clickhouse/Compression</li></ul> | 11:21 AM - January 08, 2025 |
