@@ -12,12 +12,13 @@ type command
 action QuickAdd: Create Leetcode page
 ```
 # Stats
-<p><span><h4 data-heading="Number of Leetcode problems done so far: 20" dir="auto">Number of Leetcode problems done so far: 20</h4></span></p><p><span><h6 data-heading="Easy: 7   Medium: 14   Hard: 0" dir="auto">Easy: 7   Medium: 14   Hard: 0</h6></span></p><p><span><h4 data-heading="Number of problems to redo : 6" dir="auto">Number of problems to redo : 6</h4></span></p><p><span><h4 data-heading="Number of problems done perfectly : 5" dir="auto">Number of problems done perfectly : 5</h4></span></p>
+<p><span><h4 data-heading="Number of Leetcode problems done so far: 20" dir="auto">Number of Leetcode problems done so far: 20</h4></span></p><p><span><h6 data-heading="Easy: 7   Medium: 15   Hard: 0" dir="auto">Easy: 7   Medium: 15   Hard: 0</h6></span></p><p><span><h4 data-heading="Number of problems to redo : 6" dir="auto">Number of problems to redo : 6</h4></span></p><p><span><h4 data-heading="Number of problems done perfectly : 5" dir="auto">Number of problems done perfectly : 5</h4></span></p>
 
 # Currently solving
-| File                                                               | Description | difficulty | tags                                                                                                                        | link                                    | Date                       |
-| ------------------------------------------------------------------ | ----------- | ---------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- | -------------------------- |
-| [[02-Areas/DSA/Leetcode/Medium/155. Min Stack\|155. Min Stack]] | \-          | Medium     | <ul><li>leetcode/stack</li><li>leetcode/design</li><li>programming/practice</li><li>leetcode/build-data-structure</li></ul> | https://leetcode.com/problems/min-stack | 7:48 PM - January 03, 2025 |
+| File                                                                                                 | Description | difficulty | tags                                                                                                                                                              | link                                                      | Date                       |
+| ---------------------------------------------------------------------------------------------------- | ----------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- | -------------------------- |
+| [[02-Areas/DSA/Leetcode/Medium/155. Min Stack\|155. Min Stack]]                                   | \-          | Medium     | <ul><li>leetcode/stack</li><li>leetcode/design</li><li>programming/practice</li><li>leetcode/build-data-structure</li></ul>                                       | https://leetcode.com/problems/min-stack                   | 7:48 PM - January 03, 2025 |
+| [[02-Areas/DSA/Leetcode/Medium/98. Validate Binary Search Tree\|98. Validate Binary Search Tree]] | \-          | Medium     | <ul><li>leetcode/tree</li><li>leetcode/depth-first-search</li><li>leetcode/binary-search-tree</li><li>leetcode/binary-tree</li><li>programming/practice</li></ul> | https://leetcode.com/problems/validate-binary-search-tree | 7:39 PM - January 05, 2025 |
 
 
 # Redo list 

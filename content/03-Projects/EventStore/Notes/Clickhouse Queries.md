@@ -1,5 +1,5 @@
 ---
-{"aliases":null,"tags":["Database/Clickhouse"],"publish":true,"date created":"Friday, December 6th 2024, 11:24:10 am","date modified":"Wednesday, December 18th 2024, 10:25:24 pm","Description":"Some useful internal queries of clickhouse","PassFrontmatter":true,"created":"2024-12-06T11:24:10.884+05:30","updated":"2024-12-26T09:09:20.831+05:30"}
+{"aliases":["Clickhouse Queries"],"tags":["Database/Clickhouse","Database/Clickhouse/SQL"],"publish":true,"date created":"Friday, December 6th 2024, 11:24:10 am","date modified":"Wednesday, December 18th 2024, 10:25:24 pm","Description":"Some useful internal queries of clickhouse","PassFrontmatter":true,"created":"2024-12-06T11:24:10.884+05:30","updated":"2025-01-09T16:49:52.034+05:30"}
 ---
 
 
@@ -31,3 +31,46 @@ INSERT INTO helloworld.my_first_table (user_id, message, timestamp, metric) VALU
 ```sql
 SHOW CREATE TABLE table_name;
 ```
+
+#### Compression ratio 
+##### Overall table
+```sql
+SELECT formatReadableSize(sum(data_compressed_bytes)) AS compressed_size,  
+formatReadableSize(sum(data_uncompressed_bytes)) AS uncompressed_size,  
+round(sum(data_uncompressed_bytes) / sum(data_compressed_bytes), 2) AS ratio  
+FROM system.columns  
+WHERE table = 'otel_traces'
+```
+##### Column details
+```sql
+SELECT
+    name,
+    formatReadableSize(sum(data_compressed_bytes)) AS compressed_size,
+    formatReadableSize(sum(data_uncompressed_bytes)) AS uncompressed_size,
+    round(sum(data_uncompressed_bytes) / sum(data_compressed_bytes), 2) AS ratio
+FROM system.columns
+WHERE table = 'otel_traces'
+GROUP BY name order by compressed_size
+```
+
+##### Index
+```sql
+
+todo
+
+
+```
+#### Get partition data
+```sql
+SELECT
+    partition_id,
+    min_date,
+    max_date,
+    sum(rows) AS rows,
+    sum(bytes_on_disk) AS size_on_disk
+FROM system.parts
+WHERE database = 'otel' AND table = 'otel_traces'
+GROUP BY partition_id, min_date, max_date
+ORDER BY min_date;
+```
+
