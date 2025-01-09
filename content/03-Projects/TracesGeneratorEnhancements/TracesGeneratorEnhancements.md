@@ -1,5 +1,5 @@
 ---
-{"aliases":null,"tags":null,"date created":"Sunday, December 22nd 2024, 7:50:35 pm","date modified":"Thursday, December 26th 2024, 12:15:58 pm","publish":true,"PassFrontmatter":true,"created":"2024-12-26T12:14:55.260+05:30","updated":"2025-01-09T21:13:26.435+05:30"}
+{"aliases":null,"tags":null,"date created":"Sunday, December 22nd 2024, 7:50:35 pm","date modified":"Thursday, December 26th 2024, 12:15:58 pm","publish":true,"PassFrontmatter":true,"created":"2024-12-26T12:14:55.260+05:30","updated":"2025-01-09T21:19:26.450+05:30"}
 ---
 
 # Description
@@ -13,8 +13,8 @@
 - [ ] Create the upstream PR and request for reviews.
 ## Details
 Repository - [xYesh/loadgen: A flexible command-line load generator to create traces in OTel format](https://github.com/xYesh/loadgen)
+Change set - [Comparing honeycombio:main...xYesh:main · honeycombio/loadgen · GitHub](https://github.com/honeycombio/loadgen/compare/main...xYesh:loadgen:main)
 PR - 
-
 # Scratch Pad
 ```shell
 ./loadgen --tracecount=1 --depth=1 --nspans=1 --sender=print --dataset=prodRepl fk.page.type=/ip10,10,10,10
@@ -26,19 +26,6 @@ go run . --tracecount=1 --depth=10 --nspans=20 --sender=print --dataset=prodRepl
 go run . --tracecount=10 --depth=1 --nspans=1 --sender=print --dataset=prodRepl net.peer.ip=/ip2,2,10,256
 
 ./loadgen --tracecount=10 --depth=1 --nspans=1 --sender=print --dataset=prodRepl net.peer.ip=/ip2,2,10,256
-```
-
-# Task Management
-### Tasks
-```tasks
-not done
-tag includes #loadgen
-```
-
-### Achievements
-```tasks
-done
-tag includes #loadgen
 ```
 
 # Note Management
