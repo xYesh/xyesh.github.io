@@ -1,5 +1,5 @@
 ---
-{"aliases":["Clickhouse Queries"],"tags":["Database/Clickhouse","Database/Clickhouse/SQL"],"publish":true,"date created":"Friday, December 6th 2024, 11:24:10 am","date modified":"Wednesday, December 18th 2024, 10:25:24 pm","Description":"Some useful internal queries of clickhouse","PassFrontmatter":true,"created":"2024-12-06T11:24:10.884+05:30","updated":"2025-01-09T16:49:52.034+05:30"}
+{"aliases":["Clickhouse Queries"],"tags":["Database/Clickhouse","Database/Clickhouse/SQL"],"publish":true,"date created":"Friday, December 6th 2024, 11:24:10 am","date modified":"Wednesday, December 18th 2024, 10:25:24 pm","Description":"Some useful internal queries of clickhouse","PassFrontmatter":true,"created":"2024-12-06T11:24:10.884+05:30","updated":"2025-01-09T21:00:50.278+05:30"}
 ---
 
 
@@ -74,3 +74,10 @@ GROUP BY partition_id, min_date, max_date
 ORDER BY min_date;
 ```
 
+#### Alert table to create materialized `Nested` column from a `Map`
+```sql
+ALTER TABLE otel_traces
+MODIFY COLUMN nested_SpanAttributes.keys Array(LowCardinality(String)) MATERIALIZED mapKeys(SpanAttributes) CODEC(ZSTD(1))
+ALTER TABLE otel_traces
+MODIFY COLUMN nested_SpanAttributes.values Array(String) MATERIALIZED mapValues(SpanAttributes) CODEC(ZSTD(1))
+```
