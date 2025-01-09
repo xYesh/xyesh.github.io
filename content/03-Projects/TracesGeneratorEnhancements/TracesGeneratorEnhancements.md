@@ -1,5 +1,5 @@
 ---
-{"aliases":null,"tags":null,"date created":"Sunday, December 22nd 2024, 7:50:35 pm","date modified":"Thursday, December 26th 2024, 12:15:58 pm","publish":true,"PassFrontmatter":true,"created":"2024-12-26T12:14:55.260+05:30","updated":"2025-01-02T13:03:11.531+05:30"}
+{"aliases":null,"tags":null,"date created":"Sunday, December 22nd 2024, 7:50:35 pm","date modified":"Thursday, December 26th 2024, 12:15:58 pm","publish":true,"PassFrontmatter":true,"created":"2024-12-26T12:14:55.260+05:30","updated":"2025-01-09T21:13:26.435+05:30"}
 ---
 
 # Description
@@ -9,6 +9,8 @@
 		- [/] Given a list of strings, generate attribute values from that. #dropped
 	- P2
 		- [x] Control the length of string along with the cardinality
+- [ ] Prep the repository for a PR to upstream. 
+- [ ] Create the upstream PR and request for reviews.
 ## Details
 Repository - [xYesh/loadgen: A flexible command-line load generator to create traces in OTel format](https://github.com/xYesh/loadgen)
 PR - 
