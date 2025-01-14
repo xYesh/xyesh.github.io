@@ -1,5 +1,5 @@
 ---
-{"aliases":["Clickhouse Queries"],"tags":["Database/Clickhouse","Database/Clickhouse/SQL"],"publish":true,"date created":"Friday, December 6th 2024, 11:24:10 am","date modified":"Wednesday, December 18th 2024, 10:25:24 pm","Description":"Some useful internal queries of clickhouse","PassFrontmatter":true,"created":"2025-01-14T15:25:42.559+05:30","updated":"2025-01-10T19:22:42.000+05:30"}
+{"aliases":["Clickhouse Queries"],"tags":["Database/Clickhouse","Database/Clickhouse/SQL"],"publish":true,"date created":"2024-12-06T11:24","date modified":"2025-01-14T17:30","Description":"Some useful internal queries of clickhouse","PassFrontmatter":true,"created":"2025-01-14T15:25:42.559+05:30","updated":"2025-01-14T17:30:45.464+05:30"}
 ---
 
 
@@ -32,8 +32,8 @@ INSERT INTO helloworld.my_first_table (user_id, message, timestamp, metric) VALU
 SHOW CREATE TABLE table_name;
 ```
 
-#### Compression ratio / Sizes
-##### Overall table
+#### Compression Ratio / Sizes
+##### Overall Table
 ```sql
 SELECT formatReadableSize(sum(data_compressed_bytes)) AS compressed_size,  
 formatReadableSize(sum(data_uncompressed_bytes)) AS uncompressed_size,  
@@ -41,7 +41,7 @@ round(sum(data_uncompressed_bytes) / sum(data_compressed_bytes), 2) AS ratio
 FROM system.columns  
 WHERE table = 'otel_traces'
 ```
-##### Column details
+##### Column Details
 ```sql
 SELECT
     name,
@@ -61,14 +61,14 @@ todo
 
 ```
 
-##### Average bytes per row for a table
+##### Average Bytes per Row for a Table
 ```sql
 SELECT 
     (SELECT sum(bytes_on_disk) FROM system.parts WHERE database = 'otel' AND table = 'otel_traces') 
     / 
     (SELECT count() FROM otel.otel_traces) AS approx_row_size_bytes;
 ```
-##### Get partition data
+##### Get Partition Data
 ```sql
 SELECT
     partition_id,
@@ -82,12 +82,11 @@ GROUP BY partition_id, min_date, max_date
 ORDER BY min_date;
 ```
 
-#### Alter table
-##### Alert table to create materialized `Nested` column from a `Map`
+#### Alter Table
+##### Alert Table to Create Materialized `Nested` Column From a `Map`
 ```sql
 ALTER TABLE otel_traces
 MODIFY COLUMN nested_SpanAttributes.keys Array(LowCardinality(String)) MATERIALIZED mapKeys(SpanAttributes) CODEC(ZSTD(1))
 ALTER TABLE otel_traces
 MODIFY COLUMN nested_SpanAttributes.values Array(String) MATERIALIZED mapValues(SpanAttributes) CODEC(ZSTD(1))
 ```
-

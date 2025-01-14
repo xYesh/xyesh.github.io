@@ -1,9 +1,9 @@
 ---
-{"aliases":["#leetcode/dynamic-programming","#leetcode/memoization"],"tags":null,"publish":true,"date created":"Wednesday, December 4th 2024, 9:55:14 pm","date modified":"Thursday, January 2nd 2025, 8:58:23 am","PassFrontmatter":true,"created":"2025-01-14T15:25:43.423+05:30","updated":"2025-01-02T15:12:18.000+05:30"}
+{"aliases":["#leetcode/dynamic-programming","#leetcode/memoization"],"tags":null,"publish":true,"date created":"2024-12-04T21:55","date modified":"2025-01-14T17:29","PassFrontmatter":true,"created":"2025-01-14T15:25:43.423+05:30","updated":"2025-01-14T17:29:47.486+05:30"}
 ---
 
 
-# Bottom-Up dynamic programming (Tabulation)
+# Bottom-Up Dynamic Programming (Tabulation)
 ## Algorithm for [[02-Areas/DSA/Leetcode/Easy/746. Min Cost Climbing Stairs\|746. Min Cost Climbing Stairs]]
 1. Define an array `minimumCost`, where `minimumCost[i]` represents the minimum cost of reaching the ith step. The array should be one element longer than `costs` and start with all elements set to `0`.
     
@@ -14,7 +14,7 @@
     
 4. At the end, return the final element of `minimumCost`. Remember, we are treating this "step" as the top floor that we need to reach.
 
-# Find all possible combinations.
+# Find All Possible Combinations.
 ## Algorithm
 - Return `1` when the <span style="background:rgba(74, 82, 199, 0.2)">success criteria is met</span>.
 - recursively call the helper function and add the results of the various calls.
@@ -22,9 +22,8 @@
 ## Problems
 - [[02-Areas/DSA/Leetcode/Easy/70. Climbing Stairs\|70. Climbing Stairs]]
 
-# Find the best combination or combination with some conditions
+# Find the Best Combination or Combination with Some Conditions
 ## Algorithm
-- 
 ## Problems
 - [[02-Areas/DSA/Leetcode/Easy/746. Min Cost Climbing Stairs\|746. Min Cost Climbing Stairs]]
 

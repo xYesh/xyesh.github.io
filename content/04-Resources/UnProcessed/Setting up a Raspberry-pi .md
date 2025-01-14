@@ -1,15 +1,20 @@
 ---
-{"tags":["docker","raspberrypi","syncthing"],"projects":null,"url":["https://www.tomshardware.com/reviews/raspberry-pi-headless-setup-how-to,6028.html"],"type":"Guide","Description":null,"Areas":"HowTos","publish":true,"PassFrontmatter":true,"created":"2025-01-14T15:25:42.680+05:30","updated":"2025-01-14T16:46:47.023+05:30"}
+{"aliases":null,"tags":["docker","raspberrypi","syncthing"],"projects":null,"url":["https://www.tomshardware.com/reviews/raspberry-pi-headless-setup-how-to,6028.html"],"type":"Guide","Description":null,"Areas":"HowTos","publish":true,"date created":"2025-01-14T15:25","date modified":"2025-01-14T17:26","PassFrontmatter":true,"created":"2025-01-14T15:25:42.680+05:30","updated":"2025-01-14T17:26:33.849+05:30"}
 ---
 
-# Installing docker
+# Installing Docker
+
 [Installing Docker on the Raspberry Pi - Pi My Life Up](https://pimylifeup.com/raspberry-pi-docker/)
 
 ---
 # Installing Syncthing
+
 To run Syncthing as a systemd service, follow these steps:
-### 1. **Check if Syncthing is Installed**
+
+### 1. **Check If Syncthing is Installed**
+
 Ensure Syncthing is installed and accessible from your system's `$PATH`:
+
 ```bash
 syncthing --version
 ```
@@ -62,7 +67,6 @@ syncthing --version
    systemctl --user status syncthing
    ```
 
-7. Once syncthing is installed, go to the config folder specified above and enable UI from `0.0.0.0` instead of `127.0.0.1`. 
+7. Once syncthing is installed, go to the config folder specified above and enable UI from `0.0.0.0` instead of `127.0.0.1`.
 
 ---
-

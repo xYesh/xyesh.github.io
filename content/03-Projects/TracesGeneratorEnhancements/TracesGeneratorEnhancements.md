@@ -1,5 +1,5 @@
 ---
-{"aliases":null,"tags":null,"date created":"Sunday, December 22nd 2024, 7:50:35 pm","date modified":"Thursday, December 26th 2024, 12:15:58 pm","publish":true,"PassFrontmatter":true,"created":"2025-01-14T15:25:42.551+05:30","updated":"2025-01-10T02:49:32.000+05:30"}
+{"aliases":null,"tags":null,"date created":"2024-12-22T19:50","date modified":"2025-01-14T17:30","publish":true,"PassFrontmatter":true,"created":"2025-01-14T15:25:42.551+05:30","updated":"2025-01-14T17:30:40.858+05:30"}
 ---
 
 # Description
@@ -9,12 +9,16 @@
 		- [/] Given a list of strings, generate attribute values from that. #dropped
 	- P2
 		- [x] Control the length of string along with the cardinality
-- [ ] Prep the repository for a PR to upstream. 
+- [ ] Prep the repository for a PR to upstream.
 - [ ] Create the upstream PR and request for reviews.
 ## Details
+
 Repository - [xYesh/loadgen: A flexible command-line load generator to create traces in OTel format](https://github.com/xYesh/loadgen)
+
 Change set - [Comparing honeycombio:main...xYesh:main · honeycombio/loadgen · GitHub](https://github.com/honeycombio/loadgen/compare/main...xYesh:loadgen:main)
-PR - 
+
+PR -
+
 # Scratch Pad
 ```shell
 ./loadgen --tracecount=1 --depth=1 --nspans=1 --sender=print --dataset=prodRepl fk.page.type=/ip10,10,10,10

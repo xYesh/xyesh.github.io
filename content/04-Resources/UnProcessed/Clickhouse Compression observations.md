@@ -1,8 +1,8 @@
 ---
-{"tags":["Database/Clickhouse","Database/Clickhouse/Compression"],"projects":["EventStore"],"url":null,"type":"Note","Description":null,"Areas":null,"publish":true,"PassFrontmatter":true,"created":"2025-01-14T15:25:43.429+05:30","updated":"2025-01-10T02:37:48.000+05:30"}
+{"aliases":null,"tags":["Database/Clickhouse","Database/Clickhouse/Compression"],"projects":["EventStore"],"url":null,"type":"Note","Description":null,"Areas":null,"publish":true,"date created":"2025-01-14T15:25","date modified":"2025-01-14T17:26","PassFrontmatter":true,"created":"2025-01-14T15:25:43.429+05:30","updated":"2025-01-14T17:26:36.615+05:30"}
 ---
 
-# Environment details
+# Environment Details
 ## Schema
 ```sql
 CREATE TABLE otel.otel_traces
@@ -50,15 +50,15 @@ RAM - 240GB
 Disk - 5TB Standard EBS
 ```
 
-# Compression observations
-## Table level
+# Compression Observations
+## Table Level
 ```
 ┌─compressed_size─┬─uncompressed_size─┬─ratio─┐
 1. │ 2.05 TiB        │ 6.15 TiB          │  3.01 
 └─────────────────┴───────────────────┴───────┘
 ```
 
-## Column level
+## Column Level
 ```
     ┌─name───────────────┬─compressed_size─┬─uncompressed_size─┬───ratio─┐
  1. │ SpanId             │ 63.22 GiB       │ 122.73 GiB        │    1.94 │
@@ -85,5 +85,3 @@ Disk - 5TB Standard EBS
 22. │ Events.Attributes  │ 229.75 MiB      │ 32.58 GiB         │  145.22 │
     └────────────────────┴─────────────────┴───────────────────┴─────────┘
 ```
-
-
