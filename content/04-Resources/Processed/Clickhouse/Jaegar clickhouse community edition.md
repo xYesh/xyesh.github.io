@@ -1,5 +1,5 @@
 ---
-{"tags":["Database/Clickhouse","O11y/Jaegar","O11y/Jaegar/RemoteStorage","grpc"],"projects":["EventStore"],"url":"https://github.com/jaegertracing/jaeger-clickhouse","type":"Article","Description":"Jaegar community edition impl of clickhouse can be used as reference","Areas":null,"publish":true,"PassFrontmatter":true,"created":"2024-12-09T15:49:55.938+05:30","updated":"2025-01-03T17:14:51.399+05:30"}
+{"tags":["Database/Clickhouse","O11y/Jaegar","O11y/Jaegar/RemoteStorage","grpc"],"projects":["EventStore"],"url":"https://github.com/jaegertracing/jaeger-clickhouse","type":"Article","Description":"Jaegar community edition impl of clickhouse can be used as reference","Areas":null,"publish":true,"PassFrontmatter":true,"created":"2025-01-14T15:25:43.494+05:30","updated":"2025-01-03T22:44:50.000+05:30"}
 ---
 
 Official documentation on how to write a remote storage plugin - [jaeger/plugin/storage/grpc at main · jaegertracing/jaeger · GitHub](https://github.com/jaegertracing/jaeger/tree/main/plugin/storage/grpc)

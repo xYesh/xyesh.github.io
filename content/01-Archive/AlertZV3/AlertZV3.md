@@ -1,5 +1,5 @@
 ---
-{"aliases":null,"tags":null,"date created":"Sunday, December 22nd 2024, 7:50:35 pm","date modified":"Sunday, December 22nd 2024, 7:50:58 pm","publish":true,"PassFrontmatter":true,"created":"2024-12-23T10:03:57.059+05:30","updated":"2024-12-26T09:11:08.583+05:30"}
+{"aliases":null,"tags":null,"date created":"Sunday, December 22nd 2024, 7:50:35 pm","date modified":"Sunday, December 22nd 2024, 7:50:58 pm","publish":true,"PassFrontmatter":true,"created":"2025-01-14T15:25:42.597+05:30","updated":"2024-12-26T14:41:08.000+05:30"}
 ---
 
 # Description
@@ -19,9 +19,9 @@ tag includes #AlertZV3
 ```
 
 # Note management
-| File                                                        | Description | tags                                                            | Date                         |
-| ----------------------------------------------------------- | ----------- | --------------------------------------------------------------- | ---------------------------- |
-| [[01-Archive/AlertZV3/Notes/Architecture\|Architecture]] | \-          | <ul><li>Flipkart/AlertZV3</li><li>ArchitectureDiagram</li></ul> | 10:06 AM - December 23, 2024 |
+| File                                                        | Description | tags                                                            | Date                       |
+| ----------------------------------------------------------- | ----------- | --------------------------------------------------------------- | -------------------------- |
+| [[01-Archive/AlertZV3/Notes/Architecture\|Architecture]] | \-          | <ul><li>Flipkart/AlertZV3</li><li>ArchitectureDiagram</li></ul> | 3:25 PM - January 14, 2025 |
 
 
 # Resource Management

@@ -1,5 +1,5 @@
 ---
-{"Areas":["HowTos"],"tags":["o11y/Alertmanager/API","o11y/Alertmanager"],"publish":true,"PassFrontmatter":true,"created":"2024-12-02T19:48:02.610+05:30","updated":"2024-12-26T09:11:27.276+05:30"}
+{"Areas":["HowTos"],"tags":["o11y/Alertmanager/API","o11y/Alertmanager"],"publish":true,"PassFrontmatter":true,"created":"2025-01-14T15:25:42.525+05:30","updated":"2024-12-26T14:41:26.000+05:30"}
 ---
 
 

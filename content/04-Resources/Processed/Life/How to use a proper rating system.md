@@ -1,5 +1,5 @@
 ---
-{"tags":["Rating"],"projects":null,"url":null,"type":null,"Description":null,"Areas":"HowTos","publish":true,"PassFrontmatter":true,"created":"2025-01-12T10:49:17.482+05:30","updated":"2025-01-13T10:44:43.068+05:30"}
+{"tags":["Rating"],"projects":null,"url":null,"type":null,"Description":null,"Areas":"HowTos","publish":true,"PassFrontmatter":true,"created":"2025-01-14T15:25:42.506+05:30","updated":"2025-01-13T16:14:42.000+05:30"}
 ---
 
 ## Rating system
