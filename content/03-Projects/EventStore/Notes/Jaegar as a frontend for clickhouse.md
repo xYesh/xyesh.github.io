@@ -1,5 +1,5 @@
 ---
-{"aliases":null,"tags":["Database/Clickhouse","O11y","O11y/Jaegar","O11y/Jaegar/RemoteStorage"],"publish":true,"date created":"2024-12-09T15:22","date modified":"2025-01-14T17:30","Description":"Study of how jaegar is building its UI. i.e., what are the backend queries being run to power Jaegar.","PassFrontmatter":true,"created":"2025-01-14T17:30:46.499+05:30","updated":"2025-01-14T17:30:46.499+05:30"}
+{"aliases":null,"tags":["Database/Clickhouse","O11y","O11y/Jaegar","O11y/Jaegar/RemoteStorage"],"publish":true,"date created":"2024-12-09T15:22","date modified":"2025-01-15T14:17","Description":"Study of how jaegar is building its UI. i.e., what are the backend queries being run to power Jaegar.","projects":["EventStore"],"type":"Note","PassFrontmatter":true,"created":"2025-01-14T17:30:46.499+05:30","updated":"2025-01-15T14:17:29.686+05:30"}
 ---
 
 
