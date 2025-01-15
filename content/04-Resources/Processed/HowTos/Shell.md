@@ -1,5 +1,5 @@
 ---
-{"tags":["cli-commands","cli-commands/linux","laptopsetup"],"projects":null,"url":null,"type":null,"Description":"Useful cli / command line commands that are useful & Things to do to setup a new laptop","Areas":"HowTos","publish":true,"PassFrontmatter":true,"created":"2025-01-14T15:25:42.520+05:30","updated":"2025-01-13T23:25:30.000+05:30"}
+{"tags":["cli-commands","cli-commands/linux","laptopsetup"],"projects":null,"url":null,"type":null,"Description":"Useful cli / command line commands that are useful & Things to do to setup a new laptop","Areas":"HowTos","publish":true,"PassFrontmatter":true,"created":"2025-01-13T23:25:30.000+05:30","updated":"2025-01-13T23:25:30.000+05:30"}
 ---
 
 ## Files and folder

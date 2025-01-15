@@ -1,5 +1,5 @@
 ---
-{"aliases":null,"tags":["Database/Clickhouse","Database/Clickhouse/Compression"],"projects":["EventStore"],"url":null,"type":"Note","Description":null,"Areas":null,"publish":true,"date created":"2025-01-14T15:25","date modified":"2025-01-14T17:26","PassFrontmatter":true,"created":"2025-01-14T15:25:43.429+05:30","updated":"2025-01-14T17:26:36.615+05:30"}
+{"aliases":null,"tags":["Database/Clickhouse","Database/Clickhouse/Compression"],"projects":["EventStore"],"url":null,"type":"Note","Description":null,"Areas":null,"publish":true,"date created":"2025-01-14T15:25","date modified":"2025-01-14T17:26","PassFrontmatter":true,"created":"2025-01-14T17:26:36.615+05:30","updated":"2025-01-14T17:26:36.615+05:30"}
 ---
 
 # Environment Details

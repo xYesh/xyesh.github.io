@@ -1,5 +1,5 @@
 ---
-{"tags":["NoSQL/Hadoop","cli-commands/Hadoop"],"projects":null,"url":null,"type":null,"Description":"Some of the commonly used cli commands in hadoop","publish":true,"Areas":["HowTos"],"PassFrontmatter":true,"created":"2025-01-14T15:25:42.458+05:30","updated":"2024-12-26T14:41:26.000+05:30"}
+{"tags":["NoSQL/Hadoop","cli-commands/Hadoop"],"projects":null,"url":null,"type":null,"Description":"Some of the commonly used cli commands in hadoop","publish":true,"Areas":["HowTos"],"PassFrontmatter":true,"created":"2024-12-26T14:41:26.000+05:30","updated":"2024-12-26T14:41:26.000+05:30"}
 ---
 
 ### enable erasure coding

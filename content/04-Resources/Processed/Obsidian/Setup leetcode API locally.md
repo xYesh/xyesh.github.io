@@ -1,5 +1,5 @@
 ---
-{"tags":["leetcode/setup"],"projects":null,"url":null,"type":"Guide","Description":"How to setup leetcode API locally","Areas":"HowTos","publish":true,"PassFrontmatter":true,"created":"2025-01-14T15:25:43.433+05:30","updated":"2024-12-30T01:46:04.000+05:30"}
+{"tags":["leetcode/setup"],"projects":null,"url":null,"type":"Guide","Description":"How to setup leetcode API locally","Areas":"HowTos","publish":true,"PassFrontmatter":true,"created":"2024-12-30T01:46:04.000+05:30","updated":"2024-12-30T01:46:04.000+05:30"}
 ---
 
 # Setup details

@@ -1,5 +1,5 @@
 ---
-{"aliases":null,"Description":"Master doc for Clickhouse","tags":["Database/Clickhouse","MasterDoc"],"date created":"2024-12-02T19:15","date modified":"2025-01-14T17:30","projects":["EventStore"],"publish":true,"PassFrontmatter":true,"created":"2025-01-14T15:25:43.451+05:30","updated":"2025-01-14T17:30:45.070+05:30"}
+{"aliases":null,"Description":"Master doc for Clickhouse","tags":["Database/Clickhouse","MasterDoc"],"date created":"2024-12-02T19:15","date modified":"2025-01-14T17:30","projects":["EventStore"],"publish":true,"PassFrontmatter":true,"created":"2025-01-14T17:30:45.070+05:30","updated":"2025-01-14T17:30:45.070+05:30"}
 ---
 
 ## Details

@@ -1,5 +1,5 @@
 ---
-{"aliases":null,"tags":null,"date created":"2024-12-22T19:50","date modified":"2025-01-14T17:30","publish":true,"PassFrontmatter":true,"created":"2025-01-14T15:25:42.551+05:30","updated":"2025-01-14T17:30:40.858+05:30"}
+{"aliases":null,"tags":null,"date created":"2024-12-22T19:50","date modified":"2025-01-14T17:30","publish":true,"PassFrontmatter":true,"created":"2025-01-14T17:30:40.858+05:30","updated":"2025-01-14T17:30:40.858+05:30"}
 ---
 
 # Description
@@ -35,11 +35,11 @@ go run . --tracecount=10 --depth=1 --nspans=1 --sender=print --dataset=prodRepl 
 # Note Management
 | File                                                                                                                                                             | Description                                                                     | tags                                                                                                                                            | Date                       |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------- |
-| [[03-Projects/EventStore/Notes/Generating EventStore write traffic using Honeycombio loadgen\|Generating EventStore write traffic using Honeycombio loadgen]] | Generating Write path traffic with honeycombio for DT auto instrumentation load | <ul><li>Database/Clickhouse</li><li>Benchmark</li><li>O11y/DistributedTracing</li><li>O11y/AutoIntrumentation</li><li>O11y/Attributes</li></ul> | 3:25 PM - January 14, 2025 |
+| [[03-Projects/EventStore/Notes/Generating EventStore write traffic using Honeycombio loadgen\|Generating EventStore write traffic using Honeycombio loadgen]] | Generating Write path traffic with honeycombio for DT auto instrumentation load | <ul><li>Database/Clickhouse</li><li>Benchmark</li><li>O11y/DistributedTracing</li><li>O11y/AutoIntrumentation</li><li>O11y/Attributes</li></ul> | 5:30 PM - January 14, 2025 |
 
 
 # Resource Management
-| File                                                                                  | url                                                                                                               | Description                                         | type  | tags                                                                     | Date                       |
-| ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | --------------------------------------------------- | ----- | ------------------------------------------------------------------------ | -------------------------- |
-| [[04-Resources/Processed/GoLang/Get started with GoLang\|Get started with GoLang]] | <ul><li>https://www.youtube.com/watch?v=yyUHQIec83I</li><li>https://www.youtube.com/watch?v=XCZWyN9ZbEQ</li></ul> | A Crash course on how to start understanding GoLang | Video | <ul><li>go</li><li>ProgrammingLanguages/go</li><li>CrashCourse</li></ul> | 3:25 PM - January 14, 2025 |
+| File                                                                                  | url                                                                                                               | Description                                         | type  | tags                                                                     | Date                        |
+| ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | --------------------------------------------------- | ----- | ------------------------------------------------------------------------ | --------------------------- |
+| [[04-Resources/Processed/GoLang/Get started with GoLang\|Get started with GoLang]] | <ul><li>https://www.youtube.com/watch?v=yyUHQIec83I</li><li>https://www.youtube.com/watch?v=XCZWyN9ZbEQ</li></ul> | A Crash course on how to start understanding GoLang | Video | <ul><li>go</li><li>ProgrammingLanguages/go</li><li>CrashCourse</li></ul> | 1:14 AM - December 27, 2024 |
 

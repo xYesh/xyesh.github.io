@@ -1,5 +1,5 @@
 ---
-{"aliases":null,"tags":["docker","raspberrypi","syncthing"],"projects":null,"url":["https://www.tomshardware.com/reviews/raspberry-pi-headless-setup-how-to,6028.html"],"type":"Guide","Description":null,"Areas":"HowTos","publish":true,"date created":"2025-01-14T15:25","date modified":"2025-01-14T17:26","PassFrontmatter":true,"created":"2025-01-14T15:25:42.680+05:30","updated":"2025-01-14T17:26:33.849+05:30"}
+{"aliases":null,"tags":["docker","raspberrypi","syncthing"],"projects":null,"url":["https://www.tomshardware.com/reviews/raspberry-pi-headless-setup-how-to,6028.html"],"type":"Guide","Description":null,"Areas":"HowTos","publish":true,"date created":"2025-01-14T15:25","date modified":"2025-01-14T17:33","PassFrontmatter":true,"created":"2025-01-14T17:33:02.264+05:30","updated":"2025-01-14T17:33:02.264+05:30"}
 ---
 
 # Installing Docker
