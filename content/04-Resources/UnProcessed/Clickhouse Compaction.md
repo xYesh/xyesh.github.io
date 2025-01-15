@@ -1,5 +1,5 @@
 ---
-{"aliases":null,"tags":["Database/Clickhouse","Database/Clickhouse/Compaction"],"projects":["EventStore"],"url":null,"type":"Note","Description":"Everything related to Clickhouse Compaction","Areas":null,"publish":true,"date created":"2025-01-15T17:04","date modified":"2025-01-15T18:41","PassFrontmatter":true,"created":"2025-01-15T17:04:46.510+05:30","updated":"2025-01-15T18:41:27.677+05:30"}
+{"aliases":null,"tags":["Database/Clickhouse","Database/Clickhouse/Compaction"],"projects":["EventStore"],"url":null,"type":"Note","Description":"Everything related to Clickhouse Compaction","Areas":null,"publish":true,"date created":"2025-01-15T17:04","date modified":"2025-01-15T18:42","PassFrontmatter":true,"created":"2025-01-15T17:04:46.510+05:30","updated":"2025-01-15T18:42:16.801+05:30"}
 ---
 
 # How to Tell if Compaction is Happening on ClickHouse
@@ -11,6 +11,7 @@
 ```PromQL
 max(ClickHouseAsyncMetrics_MaxPartCountForPartition[1m])
 ```
+
 ![Screenshot 2025-01-15 at 5.16.06 PM.png](../../04-Resources/UnProcessed/attachments/Screenshot%202025-01-15%20at%205.16.06%20PM.png)
 
 ### SQL
@@ -24,6 +25,7 @@ select * from system.asynchronous_metric_log where metric = 'MaxPartCountForPart
 ```PromQL
 max(ClickHouseAsyncMetrics_TotalPartsOfMergeTreeTables[1m])
 ```
+
 ![Screenshot 2025-01-15 at 5.34.38 PM.png](../../04-Resources/UnProcessed/attachments/Screenshot%202025-01-15%20at%205.34.38%20PM.png)
 
 ### SQL
@@ -37,6 +39,7 @@ select * from system.asynchronous_metric_log where metric = 'TotalPartsOfMergeTr
 ```PromQL
 max(ClickHouseMetrics_Merge[1m])
 ```
+
 ![Screenshot 2025-01-15 at 5.43.08 PM.png](../../04-Resources/UnProcessed/attachments/Screenshot%202025-01-15%20at%205.43.08%20PM.png)
 
 ### SQL
