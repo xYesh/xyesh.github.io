@@ -1,5 +1,5 @@
 ---
-{"aliases":null,"tags":["Database/Clickhouse","Database/Clickhouse/Compaction"],"projects":["EventStore"],"url":null,"type":"Note","Description":"Everything related to Clickhouse Compaction","Areas":null,"publish":true,"date created":"2025-01-15T17:04","date modified":"2025-01-15T18:42","PassFrontmatter":true,"created":"2025-01-15T17:04:46.510+05:30","updated":"2025-01-15T18:42:16.801+05:30"}
+{"aliases":null,"tags":["Database/Clickhouse","Database/Clickhouse/Compaction"],"projects":["EventStore"],"url":null,"type":"Note","Description":"Everything related to Clickhouse Compaction","Areas":null,"publish":true,"date created":"2025-01-15T17:04","date modified":"2025-01-15T18:42","PassFrontmatter":true,"created":"2025-01-15T19:15:18.031+05:30","updated":"2025-01-15T18:42:16.801+05:30"}
 ---
 
 # How to Tell if Compaction is Happening on ClickHouse

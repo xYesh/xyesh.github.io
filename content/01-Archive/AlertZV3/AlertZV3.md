@@ -1,5 +1,5 @@
 ---
-{"aliases":null,"tags":null,"date created":"2024-12-22T19:50","date modified":"2025-01-14T17:29","publish":true,"PassFrontmatter":true,"created":"2025-01-14T17:29:29.362+05:30","updated":"2025-01-14T17:29:29.362+05:30"}
+{"aliases":null,"tags":null,"date created":"2024-12-22T19:50","date modified":"2025-01-14T17:29","publish":true,"PassFrontmatter":true,"created":"2025-01-14T15:25:42.597+05:30","updated":"2025-01-14T17:29:29.362+05:30"}
 ---
 
 # Description
@@ -21,7 +21,7 @@ tag includes #AlertZV3
 # Note Management
 | File                                                        | Description | tags                                                            | Date                       |
 | ----------------------------------------------------------- | ----------- | --------------------------------------------------------------- | -------------------------- |
-| [[01-Archive/AlertZV3/Notes/Architecture\|Architecture]] | \-          | <ul><li>Flipkart/AlertZV3</li><li>ArchitectureDiagram</li></ul> | 5:29 PM - January 14, 2025 |
+| [[01-Archive/AlertZV3/Notes/Architecture\|Architecture]] | \-          | <ul><li>Flipkart/AlertZV3</li><li>ArchitectureDiagram</li></ul> | 3:25 PM - January 14, 2025 |
 
 
 # Resource Management

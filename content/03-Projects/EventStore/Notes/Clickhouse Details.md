@@ -1,5 +1,5 @@
 ---
-{"aliases":null,"Description":"Master doc for Clickhouse","tags":["Database/Clickhouse","MasterDoc"],"date created":"2024-12-02T19:15","date modified":"2025-01-15T14:18","projects":["EventStore"],"publish":true,"type":"Note","PassFrontmatter":true,"created":"2025-01-14T17:30:45.070+05:30","updated":"2025-01-15T14:18:05.661+05:30"}
+{"aliases":null,"Description":"Master doc for Clickhouse","tags":["Database/Clickhouse","MasterDoc"],"date created":"2024-12-02T19:15","date modified":"2025-01-15T21:41","projects":["EventStore"],"publish":true,"type":"Note","PassFrontmatter":true,"created":"2025-01-14T15:25:43.451+05:30","updated":"2025-01-15T21:41:20.605+05:30"}
 ---
 
 ## Details
@@ -16,7 +16,7 @@ Installing ClickHouse locally to play around - [Installing clickhouse on macos](
 - [https://clickhouse.com/docs/en/optimize/asynchronous-inserts](https://clickhouse.com/docs/en/optimize/asynchronous-inserts)
 
 ### Database Engines
-- [https://clickhouse.com/docs/en/engines/database-engines/atomic](https://clickhouse.com/docs/en/engines/database-engines/atomic) default engine
+- [https://clickhouse.com/docs/en/engines/database-engines/atomic](https://clickhouse.com/docs/en/engines/database-engines/atomic) default engine[^1]
 - [https://clickhouse.com/docs/en/engines/database-engines/lazy](https://clickhouse.com/docs/en/engines/database-engines/lazy)
     - This is like a cold store, Loads contents into memory only when it’s queried.
 - There are some hacky ways to alert the table and change database engines - [https://stackoverflow.com/questions/68716267/is-it-possible-to-change-a-table-engine-of-an-existed-clickhouse-table/68716746#68716746](https://stackoverflow.com/questions/68716267/is-it-possible-to-change-a-table-engine-of-an-existed-clickhouse-table/68716746#68716746)
@@ -140,3 +140,7 @@ For the second case the ordering of the key columns in the compound primary key 
 
 > [!NOTE] Bechmarking design
 > [[03-Projects/EventStore/Notes/Clickhouse Benchmarking design\|Clickhouse Benchmarking design]]
+---
+# Footnotes
+# Footnotes
+[^1]: This is what is used in the majority of usecases. 
