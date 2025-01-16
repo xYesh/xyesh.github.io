@@ -1,5 +1,5 @@
 ---
-{"aliases":null,"Description":"Master doc for Clickhouse","tags":["Database/Clickhouse","MasterDoc"],"date created":"2024-12-02T19:15","date modified":"2025-01-15T21:41","projects":["EventStore"],"publish":true,"type":"Note","PassFrontmatter":true,"created":"2025-01-14T15:25:43.451+05:30","updated":"2025-01-15T21:41:20.605+05:30"}
+{"aliases":null,"Description":"Master doc for Clickhouse","tags":["Database/Clickhouse","MasterDoc"],"date created":"2024-12-02T19:15","date modified":"2025-01-15T22:01","projects":["EventStore"],"publish":true,"type":"Note","PassFrontmatter":true,"created":"2025-01-14T15:25:43.451+05:30","updated":"2025-01-15T22:01:47.457+05:30"}
 ---
 
 ## Details
@@ -142,5 +142,4 @@ For the second case the ordering of the key columns in the compound primary key 
 > [[03-Projects/EventStore/Notes/Clickhouse Benchmarking design\|Clickhouse Benchmarking design]]
 ---
 # Footnotes
-# Footnotes
-[^1]: This is what is used in the majority of usecases. 
+[^1]: This is what is used in the majority of usecases.
