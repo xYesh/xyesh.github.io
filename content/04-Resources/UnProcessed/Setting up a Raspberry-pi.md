@@ -1,5 +1,5 @@
 ---
-{"aliases":null,"tags":["docker","raspberrypi","syncthing"],"projects":null,"url":["https://www.tomshardware.com/reviews/raspberry-pi-headless-setup-how-to,6028.html"],"type":"Guide","Description":null,"Areas":"HowTos","publish":true,"date created":"2025-01-14T15:25","date modified":"2025-01-15T18:39","PassFrontmatter":true,"created":"2025-01-15T19:15:18.267+05:30","updated":"2025-01-15T18:39:55.179+05:30"}
+{"aliases":null,"tags":["docker","raspberrypi","syncthing"],"projects":null,"url":["https://www.tomshardware.com/reviews/raspberry-pi-headless-setup-how-to,6028.html"],"type":"Guide","Description":null,"Areas":"HowTos","publish":true,"date created":"2025-01-14T15:25","date modified":"2025-01-17T08:50","PassFrontmatter":true,"created":"2025-01-15T19:15:18.267+05:30","updated":"2025-01-17T08:50:04.288+05:30"}
 ---
 
 # Installing Docker
@@ -70,3 +70,17 @@ syncthing --version
 7. Once syncthing is installed, go to the config folder specified above and enable UI from `0.0.0.0` instead of `127.0.0.1`.
 
 ---
+
+# Installing FreshRSS
+
+## Running as a Docker Image
+```Shell
+docker run -d --restart unless-stopped --log-opt max-size=10m \
+  -p 8080:80 \
+  -e TZ=Asia/Kolkata \
+  -e 'CRON_MIN=1,31' \
+  -v freshrss_data:/var/www/FreshRSS/data \
+  -v freshrss_extensions:/var/www/FreshRSS/extensions \
+  --name freshrss \
+  freshrss/freshrss
+```
