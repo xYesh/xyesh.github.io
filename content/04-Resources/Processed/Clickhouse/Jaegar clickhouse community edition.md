@@ -1,5 +1,5 @@
 ---
-{"aliases":null,"tags":["Database/Clickhouse","O11y/Jaegar","O11y/Jaegar/RemoteStorage","grpc"],"projects":["EventStore"],"url":"https://github.com/jaegertracing/jaeger-clickhouse","type":"Article","Description":"Jaegar community edition impl of clickhouse can be used as reference","Areas":null,"publish":true,"date created":"2025-01-14T15:25","date modified":"2025-01-14T17:12","PassFrontmatter":true,"created":"2025-01-14T15:25:43.494+05:30","updated":"2025-01-14T17:12:04.348+05:30"}
+{"aliases":null,"tags":["Database/Clickhouse","O11y/Jaegar","O11y/Jaegar/RemoteStorage","grpc"],"projects":["EventStore"],"url":"https://github.com/jaegertracing/jaeger-clickhouse","type":"Article","Description":"Jaegar community edition impl of clickhouse can be used as reference","Areas":null,"publish":true,"date created":"2025-01-14T15:25","date modified":"2025-01-14T17:12","PassFrontmatter":true,"created":"2025-01-14T17:12:04.348+05:30","updated":"2025-01-14T17:12:04.348+05:30"}
 ---
 
 

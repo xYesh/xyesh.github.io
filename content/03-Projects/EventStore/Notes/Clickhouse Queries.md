@@ -1,6 +1,7 @@
 ---
-{"aliases":["Clickhouse Queries"],"tags":["Database/Clickhouse","Database/Clickhouse/SQL"],"publish":true,"date created":"2024-12-06T11:24","date modified":"2025-01-15T14:17","Description":"Some useful internal queries of clickhouse","projects":["EventStore"],"type":"Note","PassFrontmatter":true,"created":"2025-01-14T15:25:42.559+05:30","updated":"2025-01-15T14:17:42.994+05:30"}
+{"aliases":["Clickhouse Queries"],"tags":["Database/Clickhouse","Database/Clickhouse/SQL"],"publish":true,"date created":"2024-12-06T11:24","date modified":"2025-01-23T14:59","Description":"Some useful internal queries of clickhouse","projects":["EventStore"],"type":"Note","PassFrontmatter":true,"created":"2025-01-14T17:30:45.464+05:30","updated":"2025-01-23T14:59:31.150+05:30"}
 ---
+
 
 
 #### Table Creation Command
@@ -89,4 +90,25 @@ ALTER TABLE otel_traces
 MODIFY COLUMN nested_SpanAttributes.keys Array(LowCardinality(String)) MATERIALIZED mapKeys(SpanAttributes) CODEC(ZSTD(1))
 ALTER TABLE otel_traces
 MODIFY COLUMN nested_SpanAttributes.values Array(String) MATERIALIZED mapValues(SpanAttributes) CODEC(ZSTD(1))
+```
+
+##### Alter Tables to Add TTL
+```sql
+
+```
+# Debugging Queries
+## Check if Read Queries Are Spilling Out of RAM into Disk
+```sql
+SELECT 
+    query_id,
+    query,
+    memory_usage AS max_memory_usage,
+    read_bytes,
+    written_bytes
+FROM system.query_log
+WHERE type = 'QueryFinish'
+  AND (read_bytes > 0 OR written_bytes > 0)
+  AND NOT (query LIKE 'INSERT%' OR query LIKE 'UPDATE%' OR query LIKE 'DELETE%')
+ORDER BY event_time DESC
+LIMIT 10;
 ```

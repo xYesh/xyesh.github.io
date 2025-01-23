@@ -1,5 +1,5 @@
 ---
-{"aliases":null,"tags":["Database/Clickhouse","Database/Clickhouse/Compression"],"projects":["EventStore"],"url":null,"type":"Note","Description":"References and observed compression ratios for otel schema","Areas":null,"publish":true,"date created":"2025-01-14T15:25","date modified":"2025-01-15T13:45","PassFrontmatter":true,"created":"2025-01-15T19:15:17.862+05:30","updated":"2025-01-15T13:45:00.944+05:30"}
+{"aliases":null,"tags":["Database/Clickhouse","Database/Clickhouse/Compression"],"projects":["EventStore"],"url":null,"type":"Note","Description":"References and observed compression ratios for otel schema","Areas":null,"publish":true,"date created":"2025-01-14T15:25","date modified":"2025-01-15T13:45","PassFrontmatter":true,"created":"2025-01-14T17:26:36.615+05:30","updated":"2025-01-15T13:45:00.944+05:30"}
 ---
 
 

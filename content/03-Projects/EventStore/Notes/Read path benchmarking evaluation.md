@@ -1,5 +1,5 @@
 ---
-{"aliases":null,"tags":["O11y","Benchmark","Database/Clickhouse","Benchmark/k6"],"projects":["EventStore"],"type":"Note","Description":null,"Areas":null,"publish":true,"date created":"2024-12-04T09:19","date modified":"2025-01-15T14:17","PassFrontmatter":true,"created":"2025-01-14T15:25:42.571+05:30","updated":"2025-01-15T14:17:15.728+05:30"}
+{"aliases":null,"tags":["O11y","Benchmark","Database/Clickhouse","Benchmark/k6"],"projects":["EventStore"],"type":"Note","Description":null,"Areas":null,"publish":true,"date created":"2024-12-04T09:19","date modified":"2025-01-15T14:17","PassFrontmatter":true,"created":"2025-01-14T17:30:51.590+05:30","updated":"2025-01-15T14:17:15.728+05:30"}
 ---
 
 

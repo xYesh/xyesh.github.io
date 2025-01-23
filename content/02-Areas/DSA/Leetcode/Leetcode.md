@@ -1,5 +1,5 @@
 ---
-{"aliases":null,"tags":null,"publish":true,"date created":"2025-01-14T15:25","date modified":"2025-01-14T17:34","PassFrontmatter":true,"created":"2025-01-14T15:25:42.576+05:30","updated":"2025-01-14T17:34:36.992+05:30"}
+{"aliases":null,"tags":null,"publish":true,"date created":"2025-01-14T15:25","date modified":"2025-01-14T17:34","PassFrontmatter":true,"created":"2025-01-14T17:34:36.992+05:30","updated":"2025-01-14T17:34:36.992+05:30"}
 ---
 
 
@@ -20,13 +20,20 @@ action QuickAdd: Create Leetcode page
 # Currently Solving
 | File                                                                                                                     | Description                                 | difficulty | tags                                                                                         | link                                                               | Date                       |
 | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------- | ---------- | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | -------------------------- |
-| [[02-Areas/DSA/Leetcode/Medium/153. Find Minimum in Rotated Sorted Array\|153. Find Minimum in Rotated Sorted Array]] | i.e., finding the pivot point of the array. | Medium     | <ul><li>leetcode/array</li><li>leetcode/binary-search</li><li>programming/practice</li></ul> | https://leetcode.com/problems/find-minimum-in-rotated-sorted-array | 7:48 AM - January 20, 2025 |
+| [[02-Areas/DSA/Leetcode/Medium/153. Find Minimum in Rotated Sorted Array\|153. Find Minimum in Rotated Sorted Array]] | i.e., finding the pivot point of the array. | Medium     | <ul><li>leetcode/array</li><li>leetcode/binary-search</li><li>programming/practice</li></ul> | https://leetcode.com/problems/find-minimum-in-rotated-sorted-array | 8:55 AM - January 23, 2025 |
 | [[02-Areas/DSA/Leetcode/Medium/33. Search in Rotated Sorted Array\|33. Search in Rotated Sorted Array]]               | \-                                          | Medium     | <ul><li>leetcode/array</li><li>leetcode/binary-search</li><li>programming/practice</li></ul> | https://leetcode.com/problems/search-in-rotated-sorted-array       | 9:09 AM - January 17, 2025 |
 
 
 # Redo List
-| File | Description | difficulty | tags | link | Date |
-| ---- | ----------- | ---------- | ---- | ---- | ---- |
+| File                                                                           | Description                      | difficulty | tags                                                                                                                                                                      | link                                           | Date                       |
+| ------------------------------------------------------------------------------ | -------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- | -------------------------- |
+| [[02-Areas/DSA/Leetcode/Medium/15. 3Sum\|15. 3Sum]]                         | \-                               | Medium     | <ul><li>leetcode/array</li><li>leetcode/two-pointers</li><li>leetcode/sorting</li><li>programming/practice</li></ul>                                                      | https://leetcode.com/problems/3sum             | 5:30 PM - January 14, 2025 |
+| [[02-Areas/DSA/Leetcode/Medium/57. Insert Interval\|57. Insert Interval]]   | \-                               | Medium     | <ul><li>leetcode/array</li><li>programming/practice</li><li>leetcode/interval</li></ul>                                                                                   | https://leetcode.com/problems/insert-interval  | 5:30 PM - January 14, 2025 |
+| [[02-Areas/DSA/Leetcode/Medium/53. Maximum Subarray\|53. Maximum Subarray]] | DP problem, gave up on life.     | Medium     | <ul><li>leetcode/array</li><li>leetcode/divide-and-conquer</li><li>leetcode/dynamic-programming</li><li>programming/practice</li></ul>                                    | https://leetcode.com/problems/maximum-subarray | 5:30 PM - January 14, 2025 |
+| [[02-Areas/DSA/Leetcode/Medium/133. Clone Graph\|133. Clone Graph]]         | \-                               | Medium     | <ul><li>leetcode/hash-table</li><li>leetcode/depth-first-search</li><li>leetcode/breadth-first-search</li><li>leetcode/graph</li><li>programming/practice</li></ul>       | https://leetcode.com/problems/clone-graph      | 5:30 PM - January 14, 2025 |
+| [[02-Areas/DSA/Leetcode/Medium/155. Min Stack\|155. Min Stack]]             | \-                               | Medium     | <ul><li>leetcode/stack</li><li>leetcode/design</li><li>programming/practice</li><li>leetcode/build-data-structure</li></ul>                                               | https://leetcode.com/problems/min-stack        | 5:30 PM - January 14, 2025 |
+| [[02-Areas/DSA/Leetcode/Medium/207. Course Schedule\|207. Course Schedule]] | Graphs problem, gave up on life. | Medium     | <ul><li>leetcode/depth-first-search</li><li>leetcode/breadth-first-search</li><li>leetcode/graph</li><li>leetcode/topological-sort</li><li>programming/practice</li></ul> | https://leetcode.com/problems/course-schedule  | 5:30 PM - January 14, 2025 |
+| [[02-Areas/DSA/Leetcode/Medium/542. 01 Matrix\|542. 01 Matrix]]             | \-                               | Medium     | <ul><li>leetcode/array</li><li>leetcode/dynamic-programming</li><li>leetcode/breadth-first-search</li><li>leetcode/matrix</li><li>programming/practice</li></ul>          | https://leetcode.com/problems/01-matrix        | 5:30 PM - January 14, 2025 |
 
 
 # Recently Solved

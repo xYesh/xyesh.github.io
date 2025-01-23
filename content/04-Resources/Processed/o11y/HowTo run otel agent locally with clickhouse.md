@@ -1,9 +1,9 @@
 ---
-{"aliases":null,"tags":["Database/Clickhouse","otel","docker"],"projects":["EventStore"],"url":null,"type":"Guide","Description":"Otel agent with clickhouse","Areas":"HowTos","date created":"Friday, December 6th 2024, 4:48:40 pm","date modified":"Friday, December 6th 2024, 4:52:20 pm","publish":true,"PassFrontmatter":true,"created":"2025-01-14T15:25:43.285+05:30","updated":"2024-12-26T14:41:26.000+05:30"}
+{"aliases":null,"tags":["Database/Clickhouse","otel","docker"],"projects":["EventStore"],"url":null,"type":"Guide","Description":"Otel agent with clickhouse","Areas":"HowTos","date created":"2024-12-06T16:48","date modified":"2025-01-21T12:14","publish":true,"PassFrontmatter":true,"created":"2024-12-26T14:41:26.000+05:30","updated":"2025-01-21T12:14:34.741+05:30"}
 ---
 
 # Docker Compose File
-```
+```DockerFile
 version: '3.8'
 services:
   clickhouse:
@@ -38,7 +38,7 @@ networks:
 ```
 
 # otel-config.yml
-```
+```otel-config.yml
 receivers:
   otlp:
     protocols:
@@ -75,7 +75,7 @@ service:
 ```
 
 # Commands to Run
-```
+```Shell
 docker-compose up -d
 ```
 
