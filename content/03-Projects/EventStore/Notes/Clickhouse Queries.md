@@ -1,5 +1,5 @@
 ---
-{"aliases":["Clickhouse Queries"],"tags":["Database/Clickhouse","Database/Clickhouse/SQL"],"publish":true,"date created":"2024-12-06T11:24","date modified":"2025-01-23T14:59","Description":"Some useful internal queries of clickhouse","projects":["EventStore"],"type":"Note","PassFrontmatter":true,"created":"2025-01-14T17:30:45.464+05:30","updated":"2025-01-23T14:59:31.150+05:30"}
+{"aliases":["Clickhouse Queries"],"tags":["Database/Clickhouse","Database/Clickhouse/SQL"],"publish":true,"date created":"2024-12-06T11:24","date modified":"2025-01-23T14:59","Description":"Some useful internal queries of clickhouse","projects":["EventStore"],"type":"Note","PassFrontmatter":true,"created":"2025-01-14T15:25:42.559+05:30","updated":"2025-01-23T14:59:31.150+05:30"}
 ---
 
 

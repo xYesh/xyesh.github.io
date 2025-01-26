@@ -1,5 +1,5 @@
 ---
-{"aliases":null,"tags":null,"publish":true,"date created":"2025-01-14T15:25","date modified":"2025-01-16T14:33","PassFrontmatter":true,"created":"2025-01-14T17:30:43.091+05:30","updated":"2025-01-16T14:33:39.012+05:30"}
+{"aliases":null,"tags":null,"publish":true,"date created":"2025-01-14T15:25","date modified":"2025-01-16T14:33","PassFrontmatter":true,"created":"2025-01-14T15:25:42.521+05:30","updated":"2025-01-16T14:33:39.012+05:30"}
 ---
 
 # Scratch Pad
@@ -41,9 +41,9 @@ LIMIT 20;
 | [[04-Resources/Processed/Clickhouse/Clickhouse Benchmark\|Clickhouse Benchmark]]                                           | https://clickhouse.com/docs/en/operations/utilities/clickhouse-benchmark | clickhouse read path benchmarking tool                               | Article | <ul><li>Database/Clickhouse</li><li>Benchmark</li></ul>                                                  | \-                          |
 
 # Web Annotations
-| File                                                                                      | url                                                                     | tags                                                                                                                                | Date                        |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | --------------------------- |
-| [[04-Resources/Highlights/kb.altinity.com/How much is too much\|How much is too much]] | https://kb.altinity.com/altinity-kb-schema-design/how-much-is-too-much/ | <ul><li>#EventStore</li><li>#Database/Clickhouse</li><li>#Database</li><li>#32259ReplicatedXXXMergeTree</li><li>#31919Log</li></ul> | 12:28 PM - January 16, 2025 |
+| File                                                                                      | url                                                                     | tags                                                                         | Date                       |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- | ---------------------------------------------------------------------------- | -------------------------- |
+| [[04-Resources/Highlights/kb.altinity.com/How much is too much\|How much is too much]] | https://kb.altinity.com/altinity-kb-schema-design/how-much-is-too-much/ | <ul><li>#EventStore</li><li>#Database/Clickhouse</li><li>#Database</li></ul> | 8:04 AM - January 25, 2025 |
 
 
 ---
