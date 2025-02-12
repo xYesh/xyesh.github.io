@@ -1,7 +1,25 @@
 ---
-{"aliases":["Clickhouse Queries"],"tags":["Database/Clickhouse","Database/Clickhouse/SQL"],"publish":true,"date created":"2024-12-06T11:24","date modified":"2025-01-23T14:59","Description":"Some useful internal queries of clickhouse","projects":["EventStore"],"type":"Note","PassFrontmatter":true,"created":"2025-01-14T15:25:42.559+05:30","updated":"2025-01-23T14:59:31.150+05:30"}
+{"aliases":["Clickhouse Queries"],"tags":["Database/Clickhouse","Database/Clickhouse/SQL"],"publish":true,"date created":"2024-12-06T11:24","date modified":"2025-02-07T13:18","Description":"Some useful internal queries of clickhouse","projects":["EventStore"],"type":"Note","PassFrontmatter":true,"created":"2025-01-14T15:25:42.559+05:30","updated":"2025-02-07T13:18:12.697+05:30"}
 ---
 
+
+**Table of contents**
+- [Table Creation Command](#Table%20Creation%20Command)
+- [Inserting Some Data into a Table](#Inserting%20Some%20Data%20into%20a%20Table)
+- [Get Table Schema](#Get%20Table%20Schema)
+- [Compression Ratio / Sizes](#Compression%20Ratio%20/%20Sizes)
+	- [Overall Table](#Overall%20Table)
+	- [Column Details](#Column%20Details)
+	- [Index](#Index)
+	- [Average Bytes per Row for a Table](#Average%20Bytes%20per%20Row%20for%20a%20Table)
+	- [Get Partition Data](#Get%20Partition%20Data)
+- [Alter Table](#Alter%20Table)
+	- [Alert Table to Create Materialized `Nested` Column From a `Map`](#Alert%20Table%20to%20Create%20Materialized%20%60Nested%60%20Column%20From%20a%20%60Map%60)
+	- [Alter Tables to Add TTL](#Alter%20Tables%20to%20Add%20TTL)
+- [Debugging Queries](#Debugging%20Queries)
+	- [Check if Read Queries Are Spilling Out of RAM into Disk](#Check%20if%20Read%20Queries%20Are%20Spilling%20Out%20of%20RAM%20into%20Disk)
+- [Random useful queries](#Random%20useful%20queries)
+	- [Min and max of Duration](#Min%20and%20max%20of%20Duration)
 
 
 #### Table Creation Command
@@ -90,14 +108,17 @@ ALTER TABLE otel_traces
 MODIFY COLUMN nested_SpanAttributes.keys Array(LowCardinality(String)) MATERIALIZED mapKeys(SpanAttributes) CODEC(ZSTD(1))
 ALTER TABLE otel_traces
 MODIFY COLUMN nested_SpanAttributes.values Array(String) MATERIALIZED mapValues(SpanAttributes) CODEC(ZSTD(1))
+
+
+
 ```
 
 ##### Alter Tables to Add TTL
 ```sql
 
 ```
-# Debugging Queries
-## Check if Read Queries Are Spilling Out of RAM into Disk
+#### Debugging Queries
+##### Check if Read Queries Are Spilling Out of RAM into Disk
 ```sql
 SELECT 
     query_id,
@@ -111,4 +132,14 @@ WHERE type = 'QueryFinish'
   AND NOT (query LIKE 'INSERT%' OR query LIKE 'UPDATE%' OR query LIKE 'DELETE%')
 ORDER BY event_time DESC
 LIMIT 10;
+```
+
+#### Random Useful Queries
+##### Min and Max of Duration
+```sql
+SELECT 
+    min(Duration) AS min_duration, 
+    max(Duration) AS max_duration
+FROM otel_traces
+WHERE Timestamp >= now() - INTERVAL 3 HOUR;
 ```

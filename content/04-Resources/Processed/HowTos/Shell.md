@@ -1,28 +1,28 @@
 ---
-{"tags":["cli-commands","cli-commands/linux","laptopsetup"],"projects":null,"url":null,"type":null,"Description":"Useful cli / command line commands that are useful & Things to do to setup a new laptop","Areas":"HowTos","publish":true,"PassFrontmatter":true,"created":"2025-01-14T15:25:42.520+05:30","updated":"2025-01-13T23:25:30.000+05:30"}
+{"aliases":null,"tags":["cli-commands","cli-commands/linux","laptopsetup"],"projects":null,"url":null,"type":null,"Description":"Useful cli / command line commands that are useful & Things to do to setup a new laptop","Areas":"HowTos","publish":true,"date created":"2025-01-13T23:25","date modified":"2025-02-06T13:11","PassFrontmatter":true,"created":"2025-01-14T15:25:42.520+05:30","updated":"2025-02-06T13:11:33.009+05:30"}
 ---
 
-## Files and folder
+## Files and Folder
 
-### unique lines in a file
+### Unique Lines in a File
 
 ```Plain
 sort file.log | uniq -u
 ```
 
-### grep commands
+### Grep Commands
 
 ```Plain
 grep -inr "Text" folder/to/be/searched/
 ```
 
-### find file location
+### Find File Location
 
 ```Plain
 find . -name 'log4j*'
 ```
 
-### list files in folder and sort them based on size
+### List Files in Folder and Sort Them Based on Size
 
 ```Plain
 df -h / | sort
@@ -30,13 +30,13 @@ df -h / | sort
 
 ## Processes
 
-### pid running location
+### Pid Running Location
 
 ```Plain
 lsof -p <PID> | grep cwd
 ```
 
-### who is occupying port
+### Who is Occupying Port
 
 ```Plain
 sudo ss -lptn 'sport = :6379'
@@ -44,27 +44,27 @@ sudo ss -lptn 'sport = :6379'
 lsof -nP -i4TCP:50070 | grep LISTEN
 ```
 
-### all ports in use
+### All Ports in Use
 
 ```Plain
 sudo lsof -i -P -n | grep LISTEN
 ```
 
-### SSH with port forwarding
+### SSH with Port Forwarding
 
 ```Plain
 ssh -L 60010:127.0.0.1:60010 10.53.115.88
 ssh -N -L localhost:50070:10.33.82.176:50070 10.33.82.176
 ```
 
-### kill all instances of a program
+### Kill All Instances of a Program
 
 ```Plain
 ps -C fusuma
 pkill fusuma
 ```
 
-### find and kill hung processes
+### Find and Kill Hung Processes
 
 ```Plain
 linux hung process PID kill - zombie process
@@ -72,7 +72,7 @@ linux hung process PID kill - zombie process
 ps axo stat,ppid,pid,comm | grep -w defunct
 ```
 
-### Release all buff/cache RAM
+### Release All buff/cache RAM
 
 ```Lua
 sync && sudo sysctl -w vm.drop_caches=3 && sudo sysctl -w vm.drop_caches=0
@@ -80,9 +80,9 @@ sync && sudo sysctl -w vm.drop_caches=3 && sudo sysctl -w vm.drop_caches=0
 
   
 
-## Disk commands
+## Disk Commands
 
-### disk space commands
+### Disk Space Commands
 
 ```Plain
 df -h (shows free space in entire disk)
@@ -117,34 +117,34 @@ df -h (shows free space in entire disk)
 
 ## Network
 
-### telnet nc
+### Telnet Nc
 
 ```Plain
 nc -v -w 2 -z 172.18.241.23 6388
 telnet <ip> <port>
 ```
 
-## Vim commands
+## Vim Commands
 
-### paste into vim
+### Paste into Vim
 
 ```Plain
 :set paste
 ```
 
-### Delete all contents in a file / clear a file
+### Delete All Contents in a File / Clear a File
 
 ```Plain
 Esc + gg + dG
 ```
 
-### search in file
+### Search in File
 
 ```Plain
 :%s/pattern//n
 ```
 
-### shortcuts
+### Shortcuts
 
 ```Plain
 dd - delete current line
@@ -153,7 +153,8 @@ dd - delete current line
 ## Tmux
 
 [cheat sheet](https://tmuxcheatsheet.com/)  
-### install tmux  
+
+### Install Tmux
 
 ```Plain
 apt install tmux
